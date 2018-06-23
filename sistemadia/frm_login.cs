@@ -24,26 +24,35 @@ namespace sistemadia
         {
             Application.Exit();
         }
-        
 
-        
+
+
 
         public static bControl.Usuario user = new bControl.Usuario();
 
-        private void button1_Click(object sender, EventArgs e)
+        void menuprincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+            usertxt.Text = "";
+            contraseñatxt.Text = "";
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             try
             {
 
 
-                if (user.ingresar(txtbox_dni.Text.ToString(), txtbox_pass.Text.ToString()))
+                if (user.ingresar(usertxt.Text.ToString(), contraseñatxt.Text.ToString()))
                 {
 
-                    frm_menuPrincipal men = new frm_menuPrincipal();
-                    men.Show();
+                    frm_menuPrincipal menuprincipal = new frm_menuPrincipal();
+                    menuprincipal.FormClosed += new FormClosedEventHandler(menuprincipal_FormClosed);
+                    menuprincipal.Show();
                     this.Hide();
                 }
-                else {
+                else
+                {
                     MessageBox.Show("El login es incorrecto");
                 }
             }
@@ -52,10 +61,84 @@ namespace sistemadia
                 MessageBox.Show("error" + ERR);
 
             }
+        }
+        
+        private void frm_login_Load(object sender, EventArgs e)
+        {
+            usertxt.Focus();
+
 
         }
 
         
+        private void bunifuThinButton21_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                try
+                {
+
+
+                    if (user.ingresar(usertxt.Text.ToString(), contraseñatxt.Text.ToString()))
+                    {
+
+                        frm_menuPrincipal menuprincipal = new frm_menuPrincipal();
+                        menuprincipal.FormClosed += new FormClosedEventHandler(menuprincipal_FormClosed);
+                        menuprincipal.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El login es incorrecto");
+                    }
+                }
+                catch (Exception ERR)
+                {
+                    MessageBox.Show("error" + ERR);
+
+                }
+            }
+        }
+
+        private void frm_login_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+
+
+                    if (user.ingresar(usertxt.Text.ToString(), contraseñatxt.Text.ToString()))
+                    {
+
+                        frm_menuPrincipal menuprincipal = new frm_menuPrincipal();
+                        menuprincipal.FormClosed += new FormClosedEventHandler(menuprincipal_FormClosed);
+                        menuprincipal.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El login es incorrecto");
+                    }
+                }
+                catch (Exception ERR)
+                {
+                    MessageBox.Show("error" + ERR);
+
+                }
+            }
+        }
+
+        private void contraseñatxt_OnValueChanged(object sender, EventArgs e)
+        {
+            contraseñatxt.isPassword = true;
+        }
+
+        private void usertxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumero(e);
+        }
     }
 }
 

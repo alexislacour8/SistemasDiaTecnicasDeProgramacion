@@ -33,5 +33,16 @@ namespace Conexion2.Properties {
                 return ((string)(this["pruebasistemaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-3FQKM1M\\SQLEXPRESS;Initial Catalog=sistemadia;Integrated Secu" +
+            "rity=True")]
+        public string sistemadiaConnectionString {
+            get {
+                return ((string)(this["sistemadiaConnectionString"]));
+            }
+        }
     }
 }

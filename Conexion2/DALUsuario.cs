@@ -65,11 +65,19 @@ namespace cDatos
             Int32.TryParse(idstring,out id);
             return id;
         }
+        public string obtenerUser(string nombre)
+        {
+            string user;
+            string consultapermiso = string.Format("SELECT TOP 1 NOMBRE FROM USUARIO WHERE DNI='{0}'", nombre);
+            DataTable tablapermiso = conexion.LeerPorComando(consultapermiso);
+            user = tablapermiso.Rows[0][0].ToString();
+            return user;
 
-        public DataSet obtenerusuarios()
+        }
+        public DataTable obtenerusuarios()
         {
             string consultausuarios ="SELECT ID_USUARIO,DNI,PASSWORD,CARGO,NOMBRE,APELLIDO FROM USUARIO WHERE HABILITADO=1";
-            DataSet usuariosresultado = conexion.LeerPorComando(consultausuarios).DataSet;
+            DataTable usuariosresultado = conexion.LeerPorComando(consultausuarios);
             return usuariosresultado;
         }
 
@@ -85,7 +93,8 @@ namespace cDatos
                 return false;
             }
         }
-        public void insertarnuevousuario(string username,string password, string permiso, string nombre, string apellido) {
+        public void insertarnuevousuario(string username,string password, string permiso, string nombre, string apellido)
+        {
             Int64 dni;
             Int64.TryParse(username,out dni);
 
@@ -97,6 +106,20 @@ namespace cDatos
             parametros[4]=conexion.crearParametro("@apellido",apellido);
 
             conexion.EscribirPorStoreProcedure("REGISTRARUSUARIO", parametros);
+        }
+        public void modificarnuevousuario(string username, string password, string permiso, string nombre, string apellido)
+        {
+            Int64 dni;
+            Int64.TryParse(username, out dni);
+
+            SqlParameter[] parametros = new SqlParameter[5];
+            parametros[0] = conexion.crearParametro("@dni", dni);
+            parametros[1] = conexion.crearParametro("@contra", password);
+            parametros[2] = conexion.crearParametro("@cargo", permiso);
+            parametros[3] = conexion.crearParametro("@nombre", nombre);
+            parametros[4] = conexion.crearParametro("@apellido", apellido);
+
+            conexion.EscribirPorStoreProcedure("MODIFICAR_USUARIO", parametros);
         }
     }
 }
