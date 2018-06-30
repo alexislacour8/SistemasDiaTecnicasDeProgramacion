@@ -218,19 +218,6 @@ namespace sistemadia
 
         #endregion
 
-        private void txtbox_idCliente_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void cmbox_tipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

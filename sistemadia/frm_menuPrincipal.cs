@@ -28,7 +28,7 @@ namespace sistemadia
         {
             Application.Exit();
         }
-         public static Listaprod nombre;
+         public static Producto nombre;
         public static Usuario user = frm_login.user;
 
         private void Abrirformhija(object formhijo)
@@ -51,12 +51,13 @@ namespace sistemadia
             if (TIPO == "Vendedor")
             {
                 btn_stock.Visible = false;
-             
+                btn_ordencomprafaltante.Visible = false;
                 btn_ventas.Visible = false;
                 btn_productos.Visible = false;
                 btn_usuarios.Visible = false;
                 btn_usuarios.Visible = false;
                 btn_proveedores.Visible = false;
+                btn_ordendecompra.Visible = false;
 
 
             }
@@ -68,6 +69,8 @@ namespace sistemadia
                 btn_productos.Visible = false;
                 btn_usuarios.Visible = false;
                 btn_proveedores.Visible = false;
+                btn_ordendecompra.Visible = false;
+                btn_ordencomprafaltante.Visible = false;
 
             }
             else if (TIPO== "Cargado de productos")
@@ -90,6 +93,8 @@ namespace sistemadia
                 btn_stock.Visible = false;
                 btn_ventas.Visible = false;
                 btn_proveedores.Visible = false;
+                btn_ordendecompra.Visible = false;
+                btn_ordencomprafaltante.Visible = false;
 
             }
             else if (TIPO == "Control Stock")
@@ -100,6 +105,8 @@ namespace sistemadia
                 btn_usuarios.Visible = false;
                 btn_ventas.Visible = false;
                 btn_proveedores.Visible = false;
+                btn_ordendecompra.Visible = false;
+                btn_ordencomprafaltante.Visible = false;
             }
         }
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -217,6 +224,16 @@ namespace sistemadia
         private void btn_ordendecompra_Click(object sender, EventArgs e)
         {
             Abrirformhija(new Frm_orden_compra());
+        }
+
+        private void btn_ordencomprafaltante_Click(object sender, EventArgs e)
+        {
+            Abrirformhija(new frm_ordencomprafaltante());
+        }
+
+        private void btn_ordencomprafaltante_Click_1(object sender, EventArgs e)
+        {
+            Abrirformhija(new frm_ordencomprafaltante());
         }
     }
 }

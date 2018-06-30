@@ -381,7 +381,6 @@
             this.label5.Size = new System.Drawing.Size(299, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "Buscar venta diaria semanal y mensual por vendedor";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // dateTimePicker1
             // 

@@ -13,7 +13,7 @@ namespace cDatos
     public class Conexion
     {
         private SqlConnection objConexion;
-        private string strCadenaDeConexion = "";
+        private string strCadenaDeConexion = "Data Source=TCL;Initial Catalog=sistemadia;Integrated Security=True";
 
 
         /* -------------------- private void Conectar() ------------ 
@@ -216,6 +216,18 @@ namespace cDatos
 
 
             return filasAfectadas;
+        }
+
+        //agregado por tomy
+        public DataTable intentarobtener(string comando)
+        {
+            this.Conectar();
+            SqlCommand coman = new SqlCommand(comando, objConexion);
+            SqlDataReader leer = coman.ExecuteReader();
+            DataTable nuevatabla = new DataTable();
+            nuevatabla.Load(leer);
+            this.Desconectar();
+            return nuevatabla;
         }
 
         #region Parametros

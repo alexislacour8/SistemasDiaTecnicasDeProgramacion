@@ -92,6 +92,11 @@ namespace bControl
                 return false;
             }
         }
+
+        public void agregarproducto(string producto, string proveedor)
+        {
+            conexionProveedor.agregarproductos(proveedor, producto);
+        }
         #endregion
 
     }

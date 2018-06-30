@@ -1,0 +1,9 @@
+ALTER PROCEDURE REGISTRARUSUARIO @dni bigint,@contra varchar(100),@cargo varchar(45),@nombre varchar(50),@apellido varchar(50)
+
+AS
+
+BEGIN
+
+INSERT INTO USUARIO (DNI,PASSWORD,CARGO,NOMBRE,APELLIDO,HABILITADO) VALUES (@dni,ENCRYPTBYPASSPHRASE('password',@contra),@cargo,@nombre,@apellido,1)
+
+END

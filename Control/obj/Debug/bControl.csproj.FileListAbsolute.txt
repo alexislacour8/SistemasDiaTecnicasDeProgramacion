@@ -46,3 +46,13 @@ C:\Users\alexis\Documents\SistemasDiaTecnicasDeProgramacion-master\Control\obj\D
 C:\Users\alexis\Documents\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\bControl.csproj.CoreCompileInputs.cache
 C:\Users\alexis\Documents\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\Control.dll
 C:\Users\alexis\Documents\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\Control.pdb
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Debug\Control.dll
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Debug\Control.pdb
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Debug\Conexion2.dll
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Debug\Conexion2.pdb
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Debug\Conexion2.dll.config
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\bControl.csprojAssemblyReference.cache
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\bControl.csproj.CoreCompileInputs.cache
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\bControl.csproj.CopyComplete
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\Control.dll
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\Control.pdb

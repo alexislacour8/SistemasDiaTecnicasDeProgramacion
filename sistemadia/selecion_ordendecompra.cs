@@ -13,22 +13,28 @@ namespace sistemadia
 {
     public partial class selecion_ordendecompra : Form
     {
-        public selecion_ordendecompra()
+        public selecion_ordendecompra(string proveedor)
         {
             InitializeComponent();
+            id_proveedor = proveedor;
         }
 
+        string id_proveedor;
         private void selecion_ordendecompra_Load(object sender, EventArgs e)
         {
+            
             DataTable ds;
-            Listaprod nombre = new Listaprod();
-            ds = nombre.productostocks();
-            dtView_proveedores.DataSource = ds;
-            var columnaselecionar = new DataGridViewCheckBoxColumn();
-            columnaselecionar.HeaderText = "selecionar";
-            columnaselecionar.Name = "selecionar";
-            columnaselecionar.ReadOnly = false;
-            dtView_proveedores.Columns.AddRange(new DataGridViewColumn[] { columnaselecionar });
+            Producto nombre = new Producto();
+            ds = nombre.productodeprovedor(id_proveedor);
+            if (ds.Rows.Count>0) { 
+                dtView_proveedores.DataSource = ds;
+                var columnaselecionar = new DataGridViewCheckBoxColumn();
+                columnaselecionar.HeaderText = "SELECCIONAR";
+                columnaselecionar.Name = "SELECCIONAR";
+                columnaselecionar.ReadOnly = false;
+                dtView_proveedores.Columns.AddRange(new DataGridViewColumn[] { columnaselecionar });
+            }
+            deshabilitarHeader();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -75,6 +81,19 @@ namespace sistemadia
 
                     }
                 }
+            }
+        }
+        private void terminaredit(object sender, DataGridViewCellEventArgs e)
+        {
+            dtView_proveedores.EndEdit();
+        }
+
+        private void deshabilitarHeader()
+        {
+            foreach (DataGridViewColumn columna in dtView_proveedores.Columns)
+            {
+
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
     }

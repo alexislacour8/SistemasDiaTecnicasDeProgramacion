@@ -1,0 +1,208 @@
+/*   SCRIPT SQL  - Tablas con Restricciones -   */
+
+CREATE TABLE USUARIO
+       (
+       ID_USUARIO INT NOT NULL,                              
+       DNI BIGINT NOT NULL,                              
+       PASSWORD VARCHAR(100) NOT NULL,                              
+       CARGO VARCHAR(45) NOT NULL,                              
+       NOMBRE VARCHAR(50) NOT NULL,                              
+       APELLIDO CHAR(50) NOT NULL,                              
+       HABILITADO CHAR(1) NOT NULL,                              
+       PRIMARY KEY
+               (
+               ID_USUARIO
+               )
+       );
+
+
+
+CREATE TABLE PRODUCTO
+       (
+       ID_PRODUCTO INT NOT NULL,                              
+       NOMBRE VARCHAR(50) NOT NULL,                              
+       DISPONIBILIDAD INT NOT NULL,                              
+       PRECIO MONEY NOT NULL,                              
+       TIPO CHAR(30) NOT NULL,                              
+       HABILITADO CHAR(1) NOT NULL,                              
+       PRIMARY KEY
+               (
+               ID_PRODUCTO
+               )
+       );
+
+
+
+CREATE TABLE CLIENTE
+       (
+       ID_CLIENTE INT NOT NULL,                              
+       NOMBRE VARCHAR(50) NOT NULL,                              
+       APELLIDO VARCHAR(50) NOT NULL,                              
+       EMAIL VARCHAR(70) NOT NULL,                              
+       TIPO VARCHAR(25) NOT NULL,                              
+       HABILITADO CHAR(1) NOT NULL,                              
+       PRIMARY KEY
+               (
+               ID_CLIENTE
+               )
+       );
+
+
+
+CREATE TABLE PROVEDOR
+       (
+       ID_PROVEDOR INT NOT NULL,                              
+       NOMBRE VARCHAR(50) NOT NULL,                              
+       TELEFONO VARCHAR(20) NOT NULL,                              
+       DIRECCION VARCHAR(100) NOT NULL,                              
+       EMAIL VARCHAR(100) NOT NULL,                              
+       HABILITADO CHAR(1) NOT NULL,                              
+       PRIMARY KEY
+               (
+               ID_PROVEDOR
+               )
+       );
+
+
+
+CREATE TABLE VENTA
+       (
+       ID_VENTA INT NOT NULL,                              
+       ID_USUARIO INT NOT NULL,                              
+       ID_CLIENTE INT NOT NULL,                              
+       FECHA DATETIME NOT NULL,                              
+       PRIMARY KEY
+               (
+               ID_VENTA
+               ),
+       FOREIGN KEY
+               (
+               ID_USUARIO
+               )
+          REFERENCES USUARIO
+               (
+               ID_USUARIO
+               ),
+       FOREIGN KEY
+               (
+               ID_CLIENTE
+               )
+          REFERENCES CLIENTE
+               (
+               ID_CLIENTE
+               )
+       );
+
+
+
+CREATE TABLE ORDENCOMPRA
+       (
+       ID_ORDENCOMPRA INT NOT NULL,                              
+       ID_PROVEDOR INT NOT NULL,                              
+       TIPO VARCHAR(15) NOT NULL,                              
+       FECHA DATETIME NOT NULL,                              
+       PRIMARY KEY
+               (
+               ID_ORDENCOMPRA
+               ),
+       FOREIGN KEY
+               (
+               ID_PROVEDOR
+               )
+          REFERENCES PROVEDOR
+               (
+               ID_PROVEDOR
+               )
+       );
+
+
+
+CREATE TABLE DETALLE
+       (
+       ID_VENTA INT NOT NULL,                              
+       ID_PRODUCTO INT NOT NULL,                              
+       CANTIDAD INT NOT NULL,                              
+       PRIMARY KEY
+               (
+               ID_VENTA,
+               ID_PRODUCTO
+               ),
+       FOREIGN KEY
+               (
+               ID_VENTA
+               )
+          REFERENCES VENTA
+               (
+               ID_VENTA
+               ),
+       FOREIGN KEY
+               (
+               ID_PRODUCTO
+               )
+          REFERENCES PRODUCTO
+               (
+               ID_PRODUCTO
+               )
+       );
+
+
+
+CREATE TABLE PROVEE
+       (
+       ID_PROVEDOR INT NOT NULL,                              
+       ID_PRODUCTO INT NOT NULL,                              
+       PRIMARY KEY
+               (
+               ID_PROVEDOR,
+               ID_PRODUCTO
+               ),
+       FOREIGN KEY
+               (
+               ID_PROVEDOR
+               )
+          REFERENCES PROVEDOR
+               (
+               ID_PROVEDOR
+               ),
+       FOREIGN KEY
+               (
+               ID_PRODUCTO
+               )
+          REFERENCES PRODUCTO
+               (
+               ID_PRODUCTO
+               )
+       );
+
+
+
+CREATE TABLE DETALLEORDENCOMPRA
+       (
+       ID_ORDENCOMPRA INT NOT NULL,                              
+       ID_PRODUCTO INT NOT NULL,                              
+       CANTIDAD INT NOT NULL,                              
+       PRIMARY KEY
+               (
+               ID_ORDENCOMPRA,
+               ID_PRODUCTO
+               ),
+       FOREIGN KEY
+               (
+               ID_ORDENCOMPRA
+               )
+          REFERENCES ORDENCOMPRA
+               (
+               ID_ORDENCOMPRA
+               ),
+       FOREIGN KEY
+               (
+               ID_PRODUCTO
+               )
+          REFERENCES PRODUCTO
+               (
+               ID_PRODUCTO
+               )
+       );
+
+
+

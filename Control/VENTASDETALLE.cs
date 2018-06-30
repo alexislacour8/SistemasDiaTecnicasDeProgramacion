@@ -8,9 +8,9 @@ using System.Data;
 
 namespace bControl
 {
-   public class VENTASDETALLE
+   public class VentasDetalle
     {
-        cDatos.Ventaspro conxeventas = new cDatos.Ventaspro();
+        cDatos.DALVentas conxeventas = new cDatos.DALVentas();
         private int int_ventas;
         public int Int_ventas
         {

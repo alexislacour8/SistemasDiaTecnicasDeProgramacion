@@ -20,6 +20,7 @@ namespace sistemadia
         }
 
         bControl.Proveedor proveedor = new bControl.Proveedor();  //instancia del objeto Proveedor de capa2
+        bControl.Producto producto = new bControl.Producto();
         
 
         #region Eventos
@@ -96,7 +97,16 @@ namespace sistemadia
             dtView_proveedores.DataSource = proveedor.obtener_Proveedores();
             cargarGridView();
 
+            autocompletar AU = new autocompletar();
+            AU.AutoCompletar(txt_Producto);
+            txt_Producto.Focus();
+
         }
+        DataTable productos = new DataTable();
+        int cantidaddedatosviejos = 0;
+
+
+        
 
         private void dtView_proveedores_OnCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -108,6 +118,52 @@ namespace sistemadia
                 txtbox_Email.Text = dtView_proveedores.Rows[x].Cells["EMAIL"].Value.ToString();
                 txtbox_Telefono.Text = dtView_proveedores.Rows[x].Cells["TELEFONO"].Value.ToString();
                 txt_idproveedor.Text = dtView_proveedores.Rows[x].Cells["ID_PROVEDOR"].Value.ToString();
+                txt_Seleccionado.Text= dtView_proveedores.Rows[x].Cells["NOMBRE"].Value.ToString();
+
+                DataTable productosintermedios = producto.productodeprovedor(dtView_proveedores.Rows[x].Cells["ID_PROVEDOR"].Value.ToString());
+                
+                productos.Clear();
+                productos.Columns.Clear();
+                
+                dtGridView_ProductosdelProveedor.Columns.Clear();
+                productos.Columns.Add("ID_PRODUCTO");
+                productos.Columns.Add("NOMBRE PRODUCTO");
+                productos.Columns.Add("PRECIO");
+                productos.Columns.Add("TIPO");
+                productos.Columns.Add("CODIGO PRODUCTO");
+                productos.Columns[0].ReadOnly = true;
+                productos.Columns[1].ReadOnly = true;
+                productos.Columns[2].ReadOnly = true;
+                productos.Columns[3].ReadOnly = true;
+                productos.Columns[4].ReadOnly = true;
+                int contador = 0;
+                foreach (DataRow fila in productosintermedios.Rows)
+                {
+                    DataTable pasar=producto.obtenerproductoporid(fila["ID_PRODUCTO"].ToString());  //recien me di cuenta que podia traer los datos a traves de una sola consulta, soy un boludo, de todas maneras dejemoslo porque funciona
+                    DataRow nuevo = productos.NewRow();
+                    nuevo["ID_PRODUCTO"] = pasar.Rows[0][0].ToString();
+                    nuevo["NOMBRE PRODUCTO"] = pasar.Rows[0][1].ToString();
+                    nuevo["PRECIO"] = pasar.Rows[0][2].ToString();
+                    nuevo["TIPO"] = pasar.Rows[0][3].ToString();
+                    nuevo["CODIGO PRODUCTO"] = pasar.Rows[0][4].ToString();
+                    productos.Rows.Add(nuevo);
+                    contador = contador + 1;
+                }
+                dtGridView_ProductosdelProveedor.DataSource = productos;
+                var columnaeliminar = new DataGridViewCheckBoxColumn();
+                columnaeliminar.HeaderText = "ELIMINAR";
+                columnaeliminar.Name = "Eliminar";
+                columnaeliminar.ReadOnly = false;
+
+                productosintermedios.Clear();
+
+                dtGridView_ProductosdelProveedor.Columns.AddRange(new DataGridViewColumn[] { columnaeliminar });
+                cantidaddedatosviejos = dtGridView_ProductosdelProveedor.Rows.Count;
+                dtGridView_ProductosdelProveedor.Columns[0].Visible = false;
+                deshabilitarotroHeader();
+                txt_Producto.Enabled = true;
+                btn_addproducto.Enabled = true;
+                btn_addproductproveedor.Enabled = true;
             }
         }
 
@@ -161,6 +217,7 @@ namespace sistemadia
         private void terminaredit(object sender, DataGridViewCellEventArgs e)
         {
             dtView_proveedores.EndEdit();
+            dtGridView_ProductosdelProveedor.EndEdit();
         }
 
         #endregion
@@ -174,6 +231,12 @@ namespace sistemadia
             txtbox_Nombre.Text = string.Empty;
             txtbox_Telefono.Text = string.Empty;
             txt_idproveedor.Text = string.Empty;
+            txt_Seleccionado.Text = string.Empty;
+            txt_Producto.Text = string.Empty;
+            txt_Producto.Enabled = false;
+            btn_addproducto.Enabled = false;
+            btn_addproductproveedor.Enabled = false;
+            btn_deleteproductproveedor.Enabled = false;
         }
 
        
@@ -192,6 +255,7 @@ namespace sistemadia
             columnaeliminar.Name = "Eliminar";
             columnaeliminar.ReadOnly = false;
             dtView_proveedores.Columns.AddRange(new DataGridViewColumn[] { columnaeliminar });
+            
             deshabilitarHeader();
         }
         
@@ -206,7 +270,14 @@ namespace sistemadia
             }
         }
 
+        private void deshabilitarotroHeader()
+        {
+            foreach (DataGridViewColumn columna in dtGridView_ProductosdelProveedor.Columns)
+            {
 
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
 
 
 
@@ -215,19 +286,176 @@ namespace sistemadia
 
         #endregion
 
-        private void txtbox_Telefono_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtbox_Email_MouseLeave(object sender, EventArgs e)
-        {
-          
-        }
+        
 
         private void txtbox_Telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.solonumero(e);
+        }
+
+        private void btn_deseleccionar_Click(object sender, EventArgs e)
+        {
+            descargarTextsBox();
+        }
+
+        public static string codigo;
+
+        bControl.Buscador buscadore = new Buscador();
+        
+
+        private void buscador(object sender, EventArgs e)
+        {
+            DataTable leer = buscadore.buscarproducto(txt_Producto.Text.ToString());
+            if (leer.Rows.Count > 0)
+            {
+                codigo = leer.Rows[0]["ID_PRODUCTO"].ToString();
+
+            }
+            else
+            {
+                
+            }
+        }
+
+        private void btn_addproducto_Click(object sender, EventArgs e)
+        {
+            // a partir de este punto estoy programando fumado
+            string producto = txt_Producto.Text.ToString();
+            Producto product = new Producto();
+            DataTable tabladeproductos=product.buscarproductopronombre(producto);
+            if (tabladeproductos.Rows.Count >0)
+            {
+               
+                DataRow nuevoa = productos.NewRow();
+                nuevoa["ID_PRODUCTO"] = tabladeproductos.Rows[0][0].ToString();
+                nuevoa["NOMBRE PRODUCTO"] = tabladeproductos.Rows[0][1].ToString();
+                nuevoa["PRECIO"] = tabladeproductos.Rows[0][2].ToString();
+                nuevoa["TIPO"] = tabladeproductos.Rows[0][3].ToString();
+                nuevoa["CODIGO PRODUCTO"] = tabladeproductos.Rows[0][4].ToString();
+                productos.Rows.Add(nuevoa);
+                int filas=dtGridView_ProductosdelProveedor.Rows.Count;
+                dtGridView_ProductosdelProveedor.Rows[filas-1].Cells["ELIMINAR"].ReadOnly = true;
+
+            }
+            else
+            {
+                MessageBox.Show("Producto no encontrado");
+            }
+            txt_Producto.Text = "";
+
+            txt_Producto.Focus();
+        }
+
+        private void btn_addproductproveedor_Click(object sender, EventArgs e)
+        {
+            string id_proveedor = txt_idproveedor.Text.ToString();
+            for (int i = cantidaddedatosviejos; i < dtGridView_ProductosdelProveedor.Rows.Count; i++)
+            {
+                string id_producto=dtGridView_ProductosdelProveedor.Rows[i].Cells["ID_PRODUCTO"].Value.ToString();
+                try { 
+                    proveedor.agregarproducto(id_producto, id_proveedor);
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox.Show("El objeto "+dtGridView_ProductosdelProveedor.Rows[i].Cells["NOMBRE PRODUCTO"].Value.ToString()+" esta repetido y no se tomara en cuenta");
+                    continue;
+                }
+                
+            }
+        }
+
+        private void checkboxeliminaractiva(object sender, DataGridViewCellEventArgs e)
+        {
+            int chequiados = 0;
+            foreach (DataGridViewRow row in dtGridView_ProductosdelProveedor.Rows)          //recorro todo el datagridview
+
+            {
+
+                if (row.Cells["ELIMINAR"].Value != null && (bool)row.Cells["ELIMINAR"].Value == true)      //cuento cuantos valores tienen el checkbox marcado
+
+                {
+                    chequiados = chequiados + 1;
+                    break;              //rompo el loop para no tener que recorrer toda la lista (parece buena idea)
+                }
+
+
+            }
+            if (chequiados >= 1)      //si los valores que conte son mas o iguales a uno activo el boton de eliminar
+            {
+                btn_deleteproductproveedor.Enabled = true;
+            }
+            else          //de modo contrario lo desactivo
+            {
+                btn_deleteproductproveedor.Enabled = false;
+
+            }
+        }
+
+        private void btn_deleteproductproveedor_Click(object sender, EventArgs e)
+        {
+            string id_proveedor = txt_idproveedor.Text.ToString();
+            foreach (DataGridViewRow row in dtGridView_ProductosdelProveedor.Rows)
+            {
+                if (row.Cells["ELIMINAR"].Value != null && (bool)row.Cells["ELIMINAR"].Value == true)
+
+                {
+                    int id_produto = Int32.Parse(row.Cells["ID_PRODUCTO"].Value.ToString());
+                    producto.eliminarproductosdelproveedor(id_produto.ToString(), id_proveedor);
+                }
+            }
+            MessageBox.Show("Se han eliminado los productos del proveedor satisfactoriamente");
+             DataTable productosintermedios = producto.productodeprovedor(id_proveedor);
+                
+                productos.Clear();
+                productos.Columns.Clear();
+                
+                dtGridView_ProductosdelProveedor.Columns.Clear();
+                productos.Columns.Add("ID_PRODUCTO");
+                productos.Columns.Add("NOMBRE PRODUCTO");
+                productos.Columns.Add("PRECIO");
+                productos.Columns.Add("TIPO");
+                productos.Columns.Add("CODIGO PRODUCTO");
+                productos.Columns[0].ReadOnly = true;
+                productos.Columns[1].ReadOnly = true;
+                productos.Columns[2].ReadOnly = true;
+                productos.Columns[3].ReadOnly = true;
+                productos.Columns[4].ReadOnly = true;
+                int contador = 0;
+                foreach (DataRow fila in productosintermedios.Rows)
+                {
+                    DataTable pasar=producto.obtenerproductoporid(fila["ID_PRODUCTO"].ToString());  //recien me di cuenta que podia traer los datos a traves de una sola consulta, soy un boludo, de todas maneras dejemoslo porque funciona
+                    DataRow nuevo = productos.NewRow();
+                    nuevo["ID_PRODUCTO"] = pasar.Rows[0][0].ToString();
+                    nuevo["NOMBRE PRODUCTO"] = pasar.Rows[0][1].ToString();
+                    nuevo["PRECIO"] = pasar.Rows[0][2].ToString();
+                    nuevo["TIPO"] = pasar.Rows[0][3].ToString();
+                    nuevo["CODIGO PRODUCTO"] = pasar.Rows[0][4].ToString();
+                    productos.Rows.Add(nuevo);
+                    contador = contador + 1;
+                }
+                dtGridView_ProductosdelProveedor.DataSource = productos;
+                var columnaeliminar = new DataGridViewCheckBoxColumn();
+                columnaeliminar.HeaderText = "ELIMINAR";
+                columnaeliminar.Name = "Eliminar";
+                columnaeliminar.ReadOnly = false;
+
+                productosintermedios.Clear();
+
+                dtGridView_ProductosdelProveedor.Columns.AddRange(new DataGridViewColumn[] { columnaeliminar });
+                cantidaddedatosviejos = dtGridView_ProductosdelProveedor.Rows.Count;
+                dtGridView_ProductosdelProveedor.Columns[0].Visible = false;
+                deshabilitarotroHeader();
+
+        }
+
+        private void btn_deseleccionar_Click_1(object sender, EventArgs e)
+        {
+            descargarTextsBox();
+        }
+
+        private void dtGridView_ProductosdelProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

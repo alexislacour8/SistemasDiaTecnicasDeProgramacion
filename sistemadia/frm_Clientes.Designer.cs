@@ -160,7 +160,7 @@
             this.cmbox_tipo.Name = "cmbox_tipo";
             this.cmbox_tipo.Size = new System.Drawing.Size(195, 21);
             this.cmbox_tipo.TabIndex = 4;
-            this.cmbox_tipo.SelectedIndexChanged += new System.EventHandler(this.cmbox_tipo_SelectedIndexChanged);
+           
             // 
             // txtbox_idCliente
             // 
@@ -169,7 +169,7 @@
             this.txtbox_idCliente.Size = new System.Drawing.Size(100, 20);
             this.txtbox_idCliente.TabIndex = 1;
             this.txtbox_idCliente.Visible = false;
-            this.txtbox_idCliente.TextChanged += new System.EventHandler(this.txtbox_idCliente_TextChanged);
+        
             // 
             // btn_eliminarCliente
             // 
@@ -276,7 +276,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+
             // 
             // bunifuCards2
             // 

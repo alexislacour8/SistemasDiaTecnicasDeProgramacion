@@ -70,11 +70,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cliente_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente_factura.Designer.cs">
+      <DependentUpon>cliente_factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="detalleOrdenDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="detalleOrdenDeCompra.Designer.cs">
+      <DependentUpon>detalleOrdenDeCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Clientes.designer.cs">
       <DependentUpon>frm_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_detalleordencomprafaltante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_detalleordencomprafaltante.Designer.cs">
+      <DependentUpon>frm_detalleordencomprafaltante.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_facturasventas.cs">
       <SubType>Form</SubType>
@@ -99,6 +117,12 @@
     </Compile>
     <Compile Include="frm_menuPrincipal.Designer.cs">
       <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ordencomprafaltante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ordencomprafaltante.Designer.cs">
+      <DependentUpon>frm_ordencomprafaltante.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_orden_compra.cs">
       <SubType>Form</SubType>
@@ -144,9 +168,23 @@
     <Compile Include="selecion_ordendecompra.Designer.cs">
       <DependentUpon>selecion_ordendecompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="sistemadiatomasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sistemadiatomasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="cliente_factura.resx">
+      <DependentUpon>cliente_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="detalleOrdenDeCompra.resx">
+      <DependentUpon>detalleOrdenDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Clientes.resx">
       <DependentUpon>frm_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_detalleordencomprafaltante.resx">
+      <DependentUpon>frm_detalleordencomprafaltante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_facturasventas.resx">
       <DependentUpon>frm_facturasventas.cs</DependentUpon>
@@ -159,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_menuPrincipal.resx">
       <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ordencomprafaltante.resx">
+      <DependentUpon>frm_ordencomprafaltante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_orden_compra.resx">
       <DependentUpon>Frm_orden_compra.cs</DependentUpon>
@@ -188,7 +229,9 @@
     <EmbeddedResource Include="reporte_factura.resx">
       <DependentUpon>reporte_factura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportfactura.rdlc" />
+    <EmbeddedResource Include="Reportfactura.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="selecion_ordendecompra.resx">
       <DependentUpon>selecion_ordendecompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +246,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sistemadiatomasDataSet.xsc">
+      <DependentUpon>sistemadiatomasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sistemadiatomasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sistemadiatomasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sistemadiatomasDataSet.xss">
+      <DependentUpon>sistemadiatomasDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

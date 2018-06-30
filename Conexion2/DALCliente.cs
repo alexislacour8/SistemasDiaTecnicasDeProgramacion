@@ -14,15 +14,21 @@ namespace cDatos
 
         public DataTable listar_Clientes()
         {
-            string consulta = "SELECT ID_CLIENTE,NOMBRE,APELLIDO,EMAIL,TIPO FROM CLIENTE WHERE HABILITADO=1";
+            string consulta = "SELECT ID_CLIENTE AS CODIGO,NOMBRE,APELLIDO,EMAIL,TIPO FROM CLIENTE WHERE HABILITADO=1";
             DataTable clientes = conexion.LeerPorComando(consulta);
             return clientes;
         }
         public DataTable contar()
         {
-            string consultar = "SELECT COUNT (ID_CLIENTE) FROM CLIENTE";
+            string consultar = "SELECT COUNT (ID_CLIENTE) FROM CLIENTE WHERE HABILITADO=1";
             DataTable RESUTALDO = conexion.LeerPorComando(consultar);
             return RESUTALDO;
+        }
+        public DataTable BUSCAR(string text)
+        {
+            string consulta = "SELECT ID_CLIENTE AS CODIGO,NOMBRE,APELLIDO,EMAIL,TIPO FROM CLIENTE WHERE HABILITADO=1 AND NOMBRE Like('%" + text + "%') or ID_CLIENTE  Like('%" + text + "%') ";
+            DataTable resultado = conexion.LeerPorComando(consulta);
+            return resultado;
         }
         public void guardar_Cliente(string nombre,string apellido,string email,string tipo)
         {

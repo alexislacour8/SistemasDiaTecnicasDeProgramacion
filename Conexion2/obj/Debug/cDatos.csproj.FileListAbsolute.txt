@@ -43,3 +43,12 @@ C:\Users\alexis\Documents\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj
 C:\Users\alexis\Documents\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj\Debug\cDatos.csproj.CoreCompileInputs.cache
 C:\Users\alexis\Documents\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj\Debug\Conexion2.dll
 C:\Users\alexis\Documents\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj\Debug\Conexion2.pdb
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Conexion2\bin\Debug\Conexion2.dll.config
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Conexion2\bin\Debug\Conexion2.dll
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Conexion2\bin\Debug\Conexion2.pdb
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj\Debug\cDatos.csprojAssemblyReference.cache
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj\Debug\Conexion2.ErrortextBox.resources
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj\Debug\cDatos.csproj.GenerateResource.cache
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj\Debug\cDatos.csproj.CoreCompileInputs.cache
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj\Debug\Conexion2.dll
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Conexion2\obj\Debug\Conexion2.pdb

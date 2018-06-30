@@ -54,20 +54,9 @@ namespace sistemadia
             Usuario ur = new Usuario();
 
           
-            var cadena = txtbox_newuserdni.Text;
-               
-            if (cadena.Length < 7 )
-            {
-                MessageBox.Show("ERROR DNI INVALIDO ", "ERROR!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
 
-            }
-            if (cadena.Length > 9)
-            {
-                MessageBox.Show("ERROR DNI INVALIDO", "ERROR!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-          else  if (comprobarvacio(txtbox_newuserdni.Text.ToString(), txtbox_newuserpassword.Text.ToString(), txtbox_newusernombre.Text.ToString(), txtbox_newuserapellido.Text.ToString()))
+          if (comprobarvacio(txtbox_newuserdni.Text.ToString(), txtbox_newuserpassword.Text.ToString(), txtbox_newusernombre.Text.ToString(), txtbox_newuserapellido.Text.ToString()))
             {
                 if (ur.crearnuevousuario(txtbox_newuserdni.Text, txtbox_newuserpassword.Text, txtbox_newusernombre.Text, txtbox_newuserapellido.Text, comboBox1.Text))
                 {
@@ -78,6 +67,10 @@ namespace sistemadia
                     Usuario user = frm_menuPrincipal.user;
                     ds = user.listarusuarios();
                     GridVw_usuariosregistrados.DataSource = ds;
+                }
+                else
+                {
+                    MessageBox.Show("No se puede crear el usuario, DNI no valido");
                 }
 
 
@@ -151,7 +144,7 @@ namespace sistemadia
             }
             catch(Exception error)
             {
-                MessageBox.Show("no se pudo midifar" + error);
+                MessageBox.Show("no se pudo modificar" + error);
             }
         }
 

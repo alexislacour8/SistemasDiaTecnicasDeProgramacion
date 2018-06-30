@@ -97,7 +97,6 @@
             this.GridVw_producto.RowHeadersVisible = false;
             this.GridVw_producto.Size = new System.Drawing.Size(621, 510);
             this.GridVw_producto.TabIndex = 2;
-            this.GridVw_producto.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridVw_producto_CellFormatting);
             // 
             // pictureBox1
             // 
@@ -119,7 +118,7 @@
             this.lbl_Nuevo_Producto.Size = new System.Drawing.Size(158, 23);
             this.lbl_Nuevo_Producto.TabIndex = 16;
             this.lbl_Nuevo_Producto.Text = "Nuevo Producto";
-            this.lbl_Nuevo_Producto.Click += new System.EventHandler(this.lbl_Nuevo_Producto_Click);
+           
             // 
             // lbl_Tipo
             // 
@@ -255,7 +254,7 @@
             this.preciotxt.Size = new System.Drawing.Size(166, 32);
             this.preciotxt.TabIndex = 19;
             this.preciotxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.preciotxt.OnValueChanged += new System.EventHandler(this.preciotxt_OnValueChanged);
+    
             this.preciotxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preciotxt_KeyPress);
             // 
             // disponibilidadtxt
@@ -368,7 +367,6 @@
             this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Productos";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frm_Producto
             // 

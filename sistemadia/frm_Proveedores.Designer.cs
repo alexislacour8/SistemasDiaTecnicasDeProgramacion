@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Proveedores));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_Nombre = new System.Windows.Forms.Label();
             this.lbl_Direccion = new System.Windows.Forms.Label();
             this.lbl_Email = new System.Windows.Forms.Label();
@@ -47,49 +49,61 @@
             this.txtbox_Nombre = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txt_idproveedor = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lbl_select = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_deleteproductproveedor = new System.Windows.Forms.Button();
+            this.btn_addproductproveedor = new System.Windows.Forms.Button();
+            this.lbl_producto = new System.Windows.Forms.Label();
+            this.btn_addproducto = new System.Windows.Forms.Button();
+            this.dtGridView_ProductosdelProveedor = new System.Windows.Forms.DataGridView();
+            this.btn_deseleccionar = new System.Windows.Forms.Button();
+            this.txt_Seleccionado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txt_Producto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtView_proveedores)).BeginInit();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridView_ProductosdelProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Nombre
             // 
             this.lbl_Nombre.AutoSize = true;
-            this.lbl_Nombre.Font = new System.Drawing.Font("Century Gothic", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Nombre.Location = new System.Drawing.Point(119, 121);
             this.lbl_Nombre.Name = "lbl_Nombre";
-            this.lbl_Nombre.Size = new System.Drawing.Size(61, 17);
+            this.lbl_Nombre.Size = new System.Drawing.Size(57, 16);
             this.lbl_Nombre.TabIndex = 4;
             this.lbl_Nombre.Text = "Nombre";
             // 
             // lbl_Direccion
             // 
             this.lbl_Direccion.AutoSize = true;
-            this.lbl_Direccion.Font = new System.Drawing.Font("Century Gothic", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Direccion.Location = new System.Drawing.Point(119, 194);
             this.lbl_Direccion.Name = "lbl_Direccion";
-            this.lbl_Direccion.Size = new System.Drawing.Size(69, 17);
+            this.lbl_Direccion.Size = new System.Drawing.Size(65, 16);
             this.lbl_Direccion.TabIndex = 5;
             this.lbl_Direccion.Text = "Direccion";
             // 
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Font = new System.Drawing.Font("Century Gothic", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Email.Location = new System.Drawing.Point(137, 308);
             this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(43, 17);
+            this.lbl_Email.Size = new System.Drawing.Size(42, 16);
             this.lbl_Email.TabIndex = 6;
             this.lbl_Email.Text = "Email";
             // 
             // lbl_Telefono
             // 
             this.lbl_Telefono.AutoSize = true;
-            this.lbl_Telefono.Font = new System.Drawing.Font("Century Gothic", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Telefono.Location = new System.Drawing.Point(119, 251);
             this.lbl_Telefono.Name = "lbl_Telefono";
-            this.lbl_Telefono.Size = new System.Drawing.Size(62, 17);
+            this.lbl_Telefono.Size = new System.Drawing.Size(62, 16);
             this.lbl_Telefono.TabIndex = 7;
             this.lbl_Telefono.Text = "Telefono";
             // 
@@ -119,7 +133,7 @@
             this.dtView_proveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -129,7 +143,7 @@
             this.dtView_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -138,12 +152,13 @@
             this.dtView_proveedores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dtView_proveedores.EnableHeadersVisualStyles = false;
             this.dtView_proveedores.GridColor = System.Drawing.SystemColors.Control;
-            this.dtView_proveedores.Location = new System.Drawing.Point(22, 141);
+            this.dtView_proveedores.Location = new System.Drawing.Point(22, 12);
             this.dtView_proveedores.Name = "dtView_proveedores";
             this.dtView_proveedores.RowHeadersVisible = false;
-            this.dtView_proveedores.Size = new System.Drawing.Size(637, 430);
+            this.dtView_proveedores.Size = new System.Drawing.Size(681, 239);
             this.dtView_proveedores.TabIndex = 10;
             this.dtView_proveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.terminaredit);
+            this.dtView_proveedores.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.terminaredit);
             this.dtView_proveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtView_proveedores_OnCellDoubleClick);
             this.dtView_proveedores.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtView_proveedores_OnCambiodevalor);
             // 
@@ -184,7 +199,7 @@
             this.bunifuCards1.Controls.Add(this.lbl_Direccion);
             this.bunifuCards1.Controls.Add(this.lbl_Telefono);
             this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(694, 141);
+            this.bunifuCards1.Location = new System.Drawing.Point(709, 12);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
@@ -205,7 +220,7 @@
             // 
             this.txtbox_Email.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtbox_Email.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_Email.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbox_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtbox_Email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbox_Email.HintForeColor = System.Drawing.Color.Empty;
             this.txtbox_Email.HintText = "";
@@ -220,13 +235,12 @@
             this.txtbox_Email.Size = new System.Drawing.Size(163, 32);
             this.txtbox_Email.TabIndex = 15;
             this.txtbox_Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbox_Email.MouseLeave += new System.EventHandler(this.txtbox_Email_MouseLeave);
             // 
             // txtbox_Telefono
             // 
             this.txtbox_Telefono.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtbox_Telefono.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_Telefono.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbox_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtbox_Telefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbox_Telefono.HintForeColor = System.Drawing.Color.Empty;
             this.txtbox_Telefono.HintText = "";
@@ -241,14 +255,13 @@
             this.txtbox_Telefono.Size = new System.Drawing.Size(163, 32);
             this.txtbox_Telefono.TabIndex = 14;
             this.txtbox_Telefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbox_Telefono.OnValueChanged += new System.EventHandler(this.txtbox_Telefono_OnValueChanged);
             this.txtbox_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Telefono_KeyPress);
             // 
             // txtbox_Direccion
             // 
             this.txtbox_Direccion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtbox_Direccion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_Direccion.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbox_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtbox_Direccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbox_Direccion.HintForeColor = System.Drawing.Color.Empty;
             this.txtbox_Direccion.HintText = "";
@@ -268,7 +281,7 @@
             // 
             this.txtbox_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtbox_Nombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_Nombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbox_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtbox_Nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbox_Nombre.HintForeColor = System.Drawing.Color.Empty;
             this.txtbox_Nombre.HintText = "";
@@ -296,12 +309,176 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lbl_select
+            // 
+            this.lbl_select.AutoSize = true;
+            this.lbl_select.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_select.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
+            this.lbl_select.Location = new System.Drawing.Point(444, 306);
+            this.lbl_select.Name = "lbl_select";
+            this.lbl_select.Size = new System.Drawing.Size(98, 16);
+            this.lbl_select.TabIndex = 13;
+            this.lbl_select.Text = "SELECCIONADO:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_deleteproductproveedor);
+            this.panel1.Controls.Add(this.btn_addproductproveedor);
+            this.panel1.Location = new System.Drawing.Point(709, 540);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(305, 159);
+            this.panel1.TabIndex = 17;
+            // 
+            // btn_deleteproductproveedor
+            // 
+            this.btn_deleteproductproveedor.BackColor = System.Drawing.Color.Green;
+            this.btn_deleteproductproveedor.Enabled = false;
+            this.btn_deleteproductproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deleteproductproveedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_deleteproductproveedor.Location = new System.Drawing.Point(75, 102);
+            this.btn_deleteproductproveedor.Name = "btn_deleteproductproveedor";
+            this.btn_deleteproductproveedor.Size = new System.Drawing.Size(163, 34);
+            this.btn_deleteproductproveedor.TabIndex = 1;
+            this.btn_deleteproductproveedor.Text = "Eliminar Productos";
+            this.btn_deleteproductproveedor.UseVisualStyleBackColor = false;
+            this.btn_deleteproductproveedor.Click += new System.EventHandler(this.btn_deleteproductproveedor_Click);
+            // 
+            // btn_addproductproveedor
+            // 
+            this.btn_addproductproveedor.BackColor = System.Drawing.Color.Green;
+            this.btn_addproductproveedor.Enabled = false;
+            this.btn_addproductproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addproductproveedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_addproductproveedor.Location = new System.Drawing.Point(75, 31);
+            this.btn_addproductproveedor.Name = "btn_addproductproveedor";
+            this.btn_addproductproveedor.Size = new System.Drawing.Size(163, 35);
+            this.btn_addproductproveedor.TabIndex = 0;
+            this.btn_addproductproveedor.Text = "Guardar Productos";
+            this.btn_addproductproveedor.UseVisualStyleBackColor = false;
+            this.btn_addproductproveedor.Click += new System.EventHandler(this.btn_addproductproveedor_Click);
+            // 
+            // lbl_producto
+            // 
+            this.lbl_producto.AutoSize = true;
+            this.lbl_producto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_producto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
+            this.lbl_producto.Location = new System.Drawing.Point(-1, 352);
+            this.lbl_producto.Name = "lbl_producto";
+            this.lbl_producto.Size = new System.Drawing.Size(118, 16);
+            this.lbl_producto.TabIndex = 19;
+            this.lbl_producto.Text = "Producto a agregar:";
+            // 
+            // btn_addproducto
+            // 
+            this.btn_addproducto.BackColor = System.Drawing.Color.Green;
+            this.btn_addproducto.Enabled = false;
+            this.btn_addproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addproducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_addproducto.Location = new System.Drawing.Point(275, 343);
+            this.btn_addproducto.Name = "btn_addproducto";
+            this.btn_addproducto.Size = new System.Drawing.Size(38, 32);
+            this.btn_addproducto.TabIndex = 20;
+            this.btn_addproducto.Text = "+";
+            this.btn_addproducto.UseVisualStyleBackColor = false;
+            this.btn_addproducto.Click += new System.EventHandler(this.btn_addproducto_Click);
+            // 
+            // dtGridView_ProductosdelProveedor
+            // 
+            this.dtGridView_ProductosdelProveedor.AllowUserToAddRows = false;
+            this.dtGridView_ProductosdelProveedor.AllowUserToDeleteRows = false;
+            this.dtGridView_ProductosdelProveedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGridView_ProductosdelProveedor.BackgroundColor = System.Drawing.Color.White;
+            this.dtGridView_ProductosdelProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtGridView_ProductosdelProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridView_ProductosdelProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dtGridView_ProductosdelProveedor.ColumnHeadersHeight = 30;
+            this.dtGridView_ProductosdelProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridView_ProductosdelProveedor.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dtGridView_ProductosdelProveedor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+            this.dtGridView_ProductosdelProveedor.EnableHeadersVisualStyles = false;
+            this.dtGridView_ProductosdelProveedor.GridColor = System.Drawing.SystemColors.Control;
+            this.dtGridView_ProductosdelProveedor.Location = new System.Drawing.Point(12, 382);
+            this.dtGridView_ProductosdelProveedor.Name = "dtGridView_ProductosdelProveedor";
+            this.dtGridView_ProductosdelProveedor.RowHeadersVisible = false;
+            this.dtGridView_ProductosdelProveedor.Size = new System.Drawing.Size(681, 239);
+            this.dtGridView_ProductosdelProveedor.TabIndex = 21;
+            this.dtGridView_ProductosdelProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_ProductosdelProveedor_CellContentClick);
+            // 
+            // btn_deseleccionar
+            // 
+            this.btn_deseleccionar.BackColor = System.Drawing.Color.Green;
+            this.btn_deseleccionar.FlatAppearance.BorderSize = 0;
+            this.btn_deseleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deseleccionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_deseleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btn_deseleccionar.Image")));
+            this.btn_deseleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_deseleccionar.Location = new System.Drawing.Point(496, 344);
+            this.btn_deseleccionar.Name = "btn_deseleccionar";
+            this.btn_deseleccionar.Size = new System.Drawing.Size(197, 31);
+            this.btn_deseleccionar.TabIndex = 16;
+            this.btn_deseleccionar.Text = "Cancelar Seleccion";
+            this.btn_deseleccionar.UseVisualStyleBackColor = false;
+            this.btn_deseleccionar.Click += new System.EventHandler(this.btn_deseleccionar_Click_1);
+            // 
+            // txt_Seleccionado
+            // 
+            this.txt_Seleccionado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txt_Seleccionado.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Seleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.txt_Seleccionado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_Seleccionado.HintForeColor = System.Drawing.Color.Empty;
+            this.txt_Seleccionado.HintText = "";
+            this.txt_Seleccionado.isPassword = false;
+            this.txt_Seleccionado.LineFocusedColor = System.Drawing.Color.Red;
+            this.txt_Seleccionado.LineIdleColor = System.Drawing.Color.Blue;
+            this.txt_Seleccionado.LineMouseHoverColor = System.Drawing.Color.Green;
+            this.txt_Seleccionado.LineThickness = 3;
+            this.txt_Seleccionado.Location = new System.Drawing.Point(549, 306);
+            this.txt_Seleccionado.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Seleccionado.Name = "txt_Seleccionado";
+            this.txt_Seleccionado.Size = new System.Drawing.Size(144, 32);
+            this.txt_Seleccionado.TabIndex = 16;
+            this.txt_Seleccionado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txt_Producto
+            // 
+            this.txt_Producto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_Producto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txt_Producto.Location = new System.Drawing.Point(152, 352);
+            this.txt_Producto.Name = "txt_Producto";
+            this.txt_Producto.Size = new System.Drawing.Size(100, 20);
+            this.txt_Producto.TabIndex = 22;
+            // 
             // frm_Proveedores
             // 
+            this.AcceptButton = this.btn_addproducto;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 788);
+            this.Controls.Add(this.txt_Producto);
+            this.Controls.Add(this.txt_Seleccionado);
+            this.Controls.Add(this.btn_deseleccionar);
+            this.Controls.Add(this.dtGridView_ProductosdelProveedor);
+            this.Controls.Add(this.btn_addproducto);
+            this.Controls.Add(this.lbl_producto);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lbl_select);
             this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.dtView_proveedores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -313,7 +490,10 @@
             this.bunifuCards1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridView_ProductosdelProveedor)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -333,5 +513,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_idproveedor;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lbl_select;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_deleteproductproveedor;
+        private System.Windows.Forms.Button btn_addproductproveedor;
+        private System.Windows.Forms.Button btn_addproducto;
+        private System.Windows.Forms.Label lbl_producto;
+        private System.Windows.Forms.Button btn_deseleccionar;
+        private System.Windows.Forms.DataGridView dtGridView_ProductosdelProveedor;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txt_Seleccionado;
+        private System.Windows.Forms.TextBox txt_Producto;
     }
 }

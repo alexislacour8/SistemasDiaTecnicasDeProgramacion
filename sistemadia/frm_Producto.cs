@@ -13,6 +13,7 @@ namespace sistemadia
 {
     public partial class frm_Producto : Form
     {
+        bControl.Producto producto = new bControl.Producto();
         public frm_Producto()
         {
             InitializeComponent();
@@ -22,22 +23,20 @@ namespace sistemadia
         {
 
             DataTable ds;
-            Listaprod nombre = new Listaprod();
-            ds = nombre.productolist();
+            
+            ds = producto.productolist();
             GridVw_producto.DataSource = ds;
             codigo_productotxt.Focus();
             DataTable DD;
-            Listaprod cont = new Listaprod();
-            DD = cont.CONTAR();
+            
+            DD = producto.CONTAR();
             label2.Text = DD.Rows[0][0].ToString();
 
 
 
         }
 
-        //TOMY 01-06: EN TEORIA ESTA CONEXION NO TIENE RELEVANCIA ,QUITAR
 
-        SqlConnection con = new SqlConnection("Data Source=TCL;Initial Catalog=pruebasistema;Integrated Security=True");
 
         private void Guardar_Click(object sender, EventArgs e)
         {
@@ -67,8 +66,7 @@ namespace sistemadia
             else
             {
                 DataTable dt;
-                Listaprod list = new Listaprod();
-                dt = list.produccodigo(codigo);
+                dt = producto.produccodigo(codigo);
                 cod = dt.Rows[0][0].ToString();
                 if (cod == codigo_productotxt.Text.Trim())
                 {
@@ -76,19 +74,17 @@ namespace sistemadia
                 }
                 else
                 {
-                    bControl.Listaprod pro = new bControl.Listaprod();
+                    
 
-                   if(pro.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text))
+                   if(producto.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text))
                     {
                         DataTable DD;
-                        Listaprod cont = new Listaprod();
-                        DD = cont.CONTAR();
+                        DD = producto.CONTAR();
                         label2.Text = DD.Rows[0][0].ToString();
 
                         MessageBox.Show("Se ha creado un nuevo producto");
                         DataTable ds;
-                        Listaprod nombre = new Listaprod();
-                        ds = nombre.productolist();
+                        ds = producto.productolist();
                         GridVw_producto.DataSource = ds;
 
                     }
@@ -104,35 +100,20 @@ namespace sistemadia
             codigo_productotxt.Focus();
         }
 
-        private void GridVw_producto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-           
-            
-        }
+      
 
         private void disponibilidadtxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.solonumero(e);
         }
 
-        private void preciotxt_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void preciotxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.solonumeroycomas(e);
         }
 
-        private void lbl_Nuevo_Producto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

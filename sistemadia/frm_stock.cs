@@ -18,31 +18,23 @@ namespace sistemadia
             InitializeComponent();
         }
 
-        private void GridVw_producto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        
+        Producto productoinstancia = new Producto();
+        OrdenDeCompra ordenDeCompra = new OrdenDeCompra();
         private void frm_stock_Load(object sender, EventArgs e)
         {
-            DataTable ds;
-            Listaprod nombre = new Listaprod();
-            ds = nombre.productolist();
-            GridVw_producto.DataSource = ds;
+
+            GridVw_ordenesSinRevisar.DataSource = ordenDeCompra.obtenerordenesdecomprasinrevisar();
             
 
         }
 
         private void btn_selecionar_Click(object sender, EventArgs e)
         {
-            if (GridVw_producto.SelectedCells.Count > 0)
+            if (GridVw_ordenesSinRevisar.SelectedCells.Count > 0)
             {
 
-                codigo_productotxt.Text = GridVw_producto.CurrentRow.Cells[0].Value.ToString();
-                nombreproductotxt.Text = GridVw_producto.CurrentRow.Cells[1].Value.ToString();
-                disponibilidadtxt.Text = GridVw_producto.CurrentRow.Cells[4].Value.ToString();
-                preciotxt.Text = GridVw_producto.CurrentRow.Cells[2].Value.ToString();
-                tipotxt.Text = GridVw_producto.CurrentRow.Cells[3].Value.ToString();
+                
             }
             
         }
@@ -51,16 +43,9 @@ namespace sistemadia
         {
             try
             {
-                bControl.Listaprod pro = new bControl.Listaprod();
-
-                pro.actualizar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text,codigo_productotxt.Text);
 
 
-                MessageBox.Show("Se ha modicicado un nuevo producto");
-                DataTable ds;
-                Listaprod nombre = new Listaprod();
-                ds = nombre.productolist();
-                GridVw_producto.DataSource = ds;
+                
 
             }
             catch (Exception erro)
@@ -71,7 +56,7 @@ namespace sistemadia
 
         private void GridVw_producto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (this.GridVw_producto.Columns[e.ColumnIndex].Name == "DISPONIBILIDAD")
+            if (this.GridVw_ordenesSinRevisar.Columns[e.ColumnIndex].Name == "DISPONIBILIDAD")
             {
                 if (Convert.ToInt32(e.Value) <= 800)
                 {
@@ -95,32 +80,21 @@ namespace sistemadia
 
         private void bnt_stock_Click(object sender, EventArgs e)
         {
-            DataTable ds;
-            Listaprod nombre = new Listaprod();
-            ds = nombre.productostocks();
-            GridVw_producto.DataSource = ds;
-            MessageBox.Show("Productos bajos de stock reponer");
+            
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                bControl.Listaprod pro = new bControl.Listaprod();
-
-                pro.ELIMINAR(codigo_productotxt.Text);
 
 
-                MessageBox.Show("Se ha ELIMINADO un nuevo producto");
-                DataTable ds;
-                Listaprod nombre = new Listaprod();
-                ds = nombre.productolist();
-                GridVw_producto.DataSource = ds;
+                
 
             }
             catch (Exception erro)
             {
-                MessageBox.Show("No se a podido ELIMINAR producto" + erro);
+                
             }
         }
 
@@ -128,14 +102,10 @@ namespace sistemadia
         {
             if(e.KeyCode == Keys.F9)
             {
-                if (GridVw_producto.SelectedCells.Count > 0)
+                if (GridVw_ordenesSinRevisar.SelectedCells.Count > 0)
                 {
 
-                    codigo_productotxt.Text = GridVw_producto.CurrentRow.Cells[0].Value.ToString();
-                    nombreproductotxt.Text = GridVw_producto.CurrentRow.Cells[1].Value.ToString();
-                    disponibilidadtxt.Text = GridVw_producto.CurrentRow.Cells[4].Value.ToString();
-                    preciotxt.Text = GridVw_producto.CurrentRow.Cells[2].Value.ToString();
-                    tipotxt.Text = GridVw_producto.CurrentRow.Cells[3].Value.ToString();
+                    
                 }
             }
         }
@@ -147,10 +117,7 @@ namespace sistemadia
 
         private void txt_buscar_OnValueChanged(object sender, EventArgs e)
         {
-            DataTable ds;
-            Listaprod nombre = new Listaprod();
-            ds = nombre.buscarproducto(txt_buscar.Text);
-            GridVw_producto.DataSource = ds;
+            
         }
 
         private void preciotxt_KeyPress(object sender, KeyPressEventArgs e)
@@ -163,10 +130,32 @@ namespace sistemadia
             validar.solonumero(e);
         }
 
-        private void codigo_productotxt_OnValueChanged(object sender, EventArgs e)
+        private void verdetalle(object sender, DataGridViewCellEventArgs e)
         {
+            string id_ordenDeCompra = GridVw_ordenesSinRevisar.Rows[e.RowIndex].Cells["ID_ORDENCOMPRA"].Value.ToString();
+            detalleOrdenDeCompra detalle = new detalleOrdenDeCompra(id_ordenDeCompra);
+            detalle.ShowDialog();
+            if (detalle.DialogResult== DialogResult.OK)
+            {
+                DataTable tablaconfirmada = new DataTable();
+                tablaconfirmada.Columns.Add("ID_PRODUCTO");
+                tablaconfirmada.Columns.Add("CANTIDADREAL");
+                tablaconfirmada.Columns.Add("CANTIDAD");
+                foreach (DataGridViewRow item in detalle.dtView_DetalleOrdenCompra.Rows)
+                {
+                    string id_producto = item.Cells["ID_PRODUCTO"].Value.ToString();
+                    string cantidadtextox = item.Cells["CANTIDADREAL"].Value.ToString();
+                    DataRow nuevoa = tablaconfirmada.NewRow();
+                    nuevoa["CANTIDADREAL"] = cantidadtextox;
+                    nuevoa["ID_PRODUCTO"] = id_producto;
+                    nuevoa["CANTIDAD"] = item.Cells["CANTIDAD"].Value.ToString();
+                    tablaconfirmada.Rows.Add(nuevoa);
 
-           
+                }
+                ordenDeCompra.confirmarordendecompra(id_ordenDeCompra,tablaconfirmada);
+                GridVw_ordenesSinRevisar.DataSource = ordenDeCompra.obtenerordenesdecomprasinrevisar();
+            }
+
         }
     }
 }

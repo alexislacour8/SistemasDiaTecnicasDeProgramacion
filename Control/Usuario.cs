@@ -70,29 +70,39 @@ namespace bControl
 
             if (!string.IsNullOrEmpty(username) & !string.IsNullOrEmpty(password) & !string.IsNullOrEmpty(nombre) & !string.IsNullOrEmpty(apellido) & !string.IsNullOrEmpty(permiso))
             {
-                if (conexionusuario.comprobarusuarioexistente(username))
-                {
-                    string passwordsinhashear = password;
-                    var bytes = new byte[16];
-                    using (var rng = new RNGCryptoServiceProvider())
-                    {
-                        rng.GetBytes(bytes);
-                    }
-                    string randomSalt = BitConverter.ToString(bytes).Replace("-", "").ToLower();
-                    var md5 = new MD5CryptoServiceProvider();
-                    var md5data = md5.ComputeHash(Encoding.ASCII.GetBytes(passwordsinhashear + randomSalt));
-                    string passwordhasheada = BitConverter.ToString(md5data).Replace("-", "").ToLower();
+                var cadena = username;
 
-                    string passwordhasheadayconsalt = randomSalt + "," + passwordhasheada;
-
-                    conexionusuario.insertarnuevousuario(username,passwordhasheadayconsalt,permiso,nombre,apellido);
-
-                    return true;
-                }
-                else
+                if (cadena.Length < 7 || cadena.Length > 9)
                 {
                     return false;
                 }
+                else
+                {
+                    if (conexionusuario.comprobarusuarioexistente(username))
+                    {
+                        string passwordsinhashear = password;
+                        var bytes = new byte[16];
+                        using (var rng = new RNGCryptoServiceProvider())
+                        {
+                            rng.GetBytes(bytes);
+                        }
+                        string randomSalt = BitConverter.ToString(bytes).Replace("-", "").ToLower();
+                        var md5 = new MD5CryptoServiceProvider();
+                        var md5data = md5.ComputeHash(Encoding.ASCII.GetBytes(passwordsinhashear + randomSalt));
+                        string passwordhasheada = BitConverter.ToString(md5data).Replace("-", "").ToLower();
+
+                        string passwordhasheadayconsalt = randomSalt + "," + passwordhasheada;
+
+                        conexionusuario.insertarnuevousuario(username, passwordhasheadayconsalt, permiso, nombre, apellido);
+
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                
             }
             else
             {

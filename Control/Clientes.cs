@@ -23,7 +23,12 @@ namespace bControl
                 return false;
             }
         }
+        public DataTable buscarcliente(string box)
+        {
+            DataTable tablacliente = conexionDALcliente.BUSCAR(box);
+            return tablacliente;
 
+        }
         public DataTable listar_Clientes()
         {
             DataTable clientes=conexionDALcliente.listar_Clientes();

@@ -48,5 +48,11 @@ namespace cDatos
             parametros[4] = conexion.crearParametro("EMAIL",email);
             conexion.EscribirPorStoreProcedure("MODIFICAR_PROVEEDOR",parametros);
         }
+
+        public void agregarproductos(string proveedor, string producto) {
+            string consulta = string.Format("INSERT INTO PROVEE (ID_PRODUCTO,ID_PROVEDOR) VALUES ({0},{1})", producto, proveedor);
+            conexion.EscribirPorComando(consulta);
+        }
+
     }
 }
