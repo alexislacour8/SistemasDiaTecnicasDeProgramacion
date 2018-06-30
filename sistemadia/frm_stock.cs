@@ -25,6 +25,7 @@ namespace sistemadia
         {
 
             GridVw_ordenesSinRevisar.DataSource = ordenDeCompra.obtenerordenesdecomprasinrevisar();
+            GridVw_ordenesSinRevisar.Columns[0].Visible = false;
             
 
         }

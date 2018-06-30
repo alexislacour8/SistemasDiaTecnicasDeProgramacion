@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Proveedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_Nombre = new System.Windows.Forms.Label();
             this.lbl_Direccion = new System.Windows.Forms.Label();
             this.lbl_Email = new System.Windows.Forms.Label();
@@ -57,8 +57,8 @@
             this.btn_addproducto = new System.Windows.Forms.Button();
             this.dtGridView_ProductosdelProveedor = new System.Windows.Forms.DataGridView();
             this.btn_deseleccionar = new System.Windows.Forms.Button();
-            this.txt_Seleccionado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txt_Producto = new System.Windows.Forms.TextBox();
+            this.txt_Seleccionado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtView_proveedores)).BeginInit();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -131,24 +131,24 @@
             this.dtView_proveedores.BackgroundColor = System.Drawing.Color.White;
             this.dtView_proveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtView_proveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtView_proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtView_proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtView_proveedores.ColumnHeadersHeight = 25;
             this.dtView_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtView_proveedores.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtView_proveedores.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtView_proveedores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dtView_proveedores.EnableHeadersVisualStyles = false;
             this.dtView_proveedores.GridColor = System.Drawing.SystemColors.Control;
@@ -312,11 +312,11 @@
             // lbl_select
             // 
             this.lbl_select.AutoSize = true;
-            this.lbl_select.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_select.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_select.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
             this.lbl_select.Location = new System.Drawing.Point(444, 306);
             this.lbl_select.Name = "lbl_select";
-            this.lbl_select.Size = new System.Drawing.Size(98, 16);
+            this.lbl_select.Size = new System.Drawing.Size(93, 13);
             this.lbl_select.TabIndex = 13;
             this.lbl_select.Text = "SELECCIONADO:";
             // 
@@ -360,11 +360,11 @@
             // lbl_producto
             // 
             this.lbl_producto.AutoSize = true;
-            this.lbl_producto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_producto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
             this.lbl_producto.Location = new System.Drawing.Point(-1, 352);
             this.lbl_producto.Name = "lbl_producto";
-            this.lbl_producto.Size = new System.Drawing.Size(118, 16);
+            this.lbl_producto.Size = new System.Drawing.Size(101, 13);
             this.lbl_producto.TabIndex = 19;
             this.lbl_producto.Text = "Producto a agregar:";
             // 
@@ -391,24 +391,24 @@
             this.dtGridView_ProductosdelProveedor.BackgroundColor = System.Drawing.Color.White;
             this.dtGridView_ProductosdelProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGridView_ProductosdelProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridView_ProductosdelProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridView_ProductosdelProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtGridView_ProductosdelProveedor.ColumnHeadersHeight = 30;
             this.dtGridView_ProductosdelProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridView_ProductosdelProveedor.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridView_ProductosdelProveedor.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtGridView_ProductosdelProveedor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dtGridView_ProductosdelProveedor.EnableHeadersVisualStyles = false;
             this.dtGridView_ProductosdelProveedor.GridColor = System.Drawing.SystemColors.Control;
@@ -417,7 +417,8 @@
             this.dtGridView_ProductosdelProveedor.RowHeadersVisible = false;
             this.dtGridView_ProductosdelProveedor.Size = new System.Drawing.Size(681, 239);
             this.dtGridView_ProductosdelProveedor.TabIndex = 21;
-            this.dtGridView_ProductosdelProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_ProductosdelProveedor_CellContentClick);
+            this.dtGridView_ProductosdelProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.terminaredit);
+            this.dtGridView_ProductosdelProveedor.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.checkboxeliminaractiva);
             // 
             // btn_deseleccionar
             // 
@@ -435,26 +436,6 @@
             this.btn_deseleccionar.UseVisualStyleBackColor = false;
             this.btn_deseleccionar.Click += new System.EventHandler(this.btn_deseleccionar_Click_1);
             // 
-            // txt_Seleccionado
-            // 
-            this.txt_Seleccionado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txt_Seleccionado.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Seleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txt_Seleccionado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_Seleccionado.HintForeColor = System.Drawing.Color.Empty;
-            this.txt_Seleccionado.HintText = "";
-            this.txt_Seleccionado.isPassword = false;
-            this.txt_Seleccionado.LineFocusedColor = System.Drawing.Color.Red;
-            this.txt_Seleccionado.LineIdleColor = System.Drawing.Color.Blue;
-            this.txt_Seleccionado.LineMouseHoverColor = System.Drawing.Color.Green;
-            this.txt_Seleccionado.LineThickness = 3;
-            this.txt_Seleccionado.Location = new System.Drawing.Point(549, 306);
-            this.txt_Seleccionado.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_Seleccionado.Name = "txt_Seleccionado";
-            this.txt_Seleccionado.Size = new System.Drawing.Size(144, 32);
-            this.txt_Seleccionado.TabIndex = 16;
-            this.txt_Seleccionado.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // txt_Producto
             // 
             this.txt_Producto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -464,6 +445,14 @@
             this.txt_Producto.Size = new System.Drawing.Size(100, 20);
             this.txt_Producto.TabIndex = 22;
             // 
+            // txt_Seleccionado
+            // 
+            this.txt_Seleccionado.Location = new System.Drawing.Point(544, 306);
+            this.txt_Seleccionado.Name = "txt_Seleccionado";
+            this.txt_Seleccionado.ReadOnly = true;
+            this.txt_Seleccionado.Size = new System.Drawing.Size(100, 20);
+            this.txt_Seleccionado.TabIndex = 23;
+            // 
             // frm_Proveedores
             // 
             this.AcceptButton = this.btn_addproducto;
@@ -471,8 +460,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 788);
-            this.Controls.Add(this.txt_Producto);
             this.Controls.Add(this.txt_Seleccionado);
+            this.Controls.Add(this.txt_Producto);
             this.Controls.Add(this.btn_deseleccionar);
             this.Controls.Add(this.dtGridView_ProductosdelProveedor);
             this.Controls.Add(this.btn_addproducto);
@@ -521,7 +510,7 @@
         private System.Windows.Forms.Label lbl_producto;
         private System.Windows.Forms.Button btn_deseleccionar;
         private System.Windows.Forms.DataGridView dtGridView_ProductosdelProveedor;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txt_Seleccionado;
         private System.Windows.Forms.TextBox txt_Producto;
+        private System.Windows.Forms.TextBox txt_Seleccionado;
     }
 }

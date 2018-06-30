@@ -31,6 +31,12 @@ namespace sistemadia
             
             DD = producto.CONTAR();
             label2.Text = DD.Rows[0][0].ToString();
+            GridVw_producto.Columns[0].ReadOnly = true;
+            GridVw_producto.Columns[1].ReadOnly = true;
+            GridVw_producto.Columns[2].ReadOnly = true;
+            GridVw_producto.Columns[3].ReadOnly = true;
+            GridVw_producto.Columns[4].ReadOnly = true;
+
 
 
 
@@ -53,7 +59,7 @@ namespace sistemadia
             tipo = tipotxt.Text;
            
            
-            if (codigo == "" && nombre1 == "" && diponi == "" && precio == "" && tipo == "")
+            if (string.IsNullOrEmpty(codigo) && string.IsNullOrEmpty(nombre1)  && string.IsNullOrEmpty(diponi) && string.IsNullOrEmpty(precio) && string.IsNullOrEmpty(tipo))
             {
                 MessageBox.Show("ERROR  TEXTOS VACIOS","ERROR!!",MessageBoxButtons.OK,MessageBoxIcon.Error);
 
@@ -86,17 +92,23 @@ namespace sistemadia
                         DataTable ds;
                         ds = producto.productolist();
                         GridVw_producto.DataSource = ds;
+                        GridVw_producto.Columns[0].ReadOnly = true;
+                        GridVw_producto.Columns[1].ReadOnly = true;
+                        GridVw_producto.Columns[2].ReadOnly = true;
+                        GridVw_producto.Columns[3].ReadOnly = true;
+                        GridVw_producto.Columns[4].ReadOnly = true;
+                        deshabilitarHeader();
 
                     }
                    
                 }
 
             }
-            codigo_productotxt.Text = "";
-            nombreproductotxt.Text="";
-            disponibilidadtxt.Text="";
-            preciotxt.Text="";
-            tipotxt.Text="";
+            codigo_productotxt.Text = string.Empty;
+            nombreproductotxt.Text= string.Empty; ;
+            disponibilidadtxt.Text= string.Empty; ;
+            preciotxt.Text= string.Empty; ;
+            tipotxt.Text= string.Empty; ;
             codigo_productotxt.Focus();
         }
 
@@ -113,7 +125,14 @@ namespace sistemadia
         {
             validar.solonumeroycomas(e);
         }
+        private void deshabilitarHeader()
+        {
+            foreach (DataGridViewColumn columna in GridVw_producto.Columns)
+            {
 
-       
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+
     }
 }

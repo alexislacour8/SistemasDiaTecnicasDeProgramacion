@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_facturasventas));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CODIGO_PROD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +58,7 @@
             this.cantidadtxt = new System.Windows.Forms.TextBox();
             this.fechatxt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.clientes1 = new System.Windows.Forms.Label();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,14 +72,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 25;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -87,14 +88,14 @@
             this.Column3,
             this.Column4,
             this.Column8});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
             this.dataGridView1.Location = new System.Drawing.Point(26, 221);
@@ -125,9 +126,9 @@
             // 
             // Column8
             // 
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column8.HeaderText = "IMPORTE";
             this.Column8.Name = "Column8";
             // 
@@ -141,7 +142,7 @@
             // 
             // preciotxt
             // 
-            this.preciotxt.Location = new System.Drawing.Point(402, 195);
+            this.preciotxt.Location = new System.Drawing.Point(400, 195);
             this.preciotxt.Name = "preciotxt";
             this.preciotxt.Size = new System.Drawing.Size(78, 20);
             this.preciotxt.TabIndex = 4;
@@ -185,6 +186,7 @@
             // btn_vender
             // 
             this.btn_vender.BackColor = System.Drawing.Color.Green;
+            this.btn_vender.Enabled = false;
             this.btn_vender.FlatAppearance.BorderSize = 0;
             this.btn_vender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btn_vender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -203,6 +205,7 @@
             // eliminar
             // 
             this.eliminar.BackColor = System.Drawing.Color.Green;
+            this.eliminar.Enabled = false;
             this.eliminar.FlatAppearance.BorderSize = 0;
             this.eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -282,6 +285,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -310,11 +314,11 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(124)))));
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(98, 17);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(150, 19);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(156, 20);
             this.bunifuCustomLabel1.TabIndex = 12;
             this.bunifuCustomLabel1.Text = "Colocar Productos";
             this.bunifuCustomLabel1.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
@@ -333,10 +337,10 @@
             // 
             this.productotxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.productotxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.productotxt.Font = new System.Drawing.Font("Century Gothic", 9.25F);
-            this.productotxt.Location = new System.Drawing.Point(140, 195);
+            this.productotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.productotxt.Location = new System.Drawing.Point(140, 194);
             this.productotxt.Name = "productotxt";
-            this.productotxt.Size = new System.Drawing.Size(114, 23);
+            this.productotxt.Size = new System.Drawing.Size(114, 21);
             this.productotxt.TabIndex = 15;
             this.productotxt.TextChanged += new System.EventHandler(this.productotxt_TextChanged_1);
             // 
@@ -344,7 +348,7 @@
             // 
             this.cantidadtxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cantidadtxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cantidadtxt.Location = new System.Drawing.Point(273, 195);
+            this.cantidadtxt.Location = new System.Drawing.Point(276, 194);
             this.cantidadtxt.Name = "cantidadtxt";
             this.cantidadtxt.Size = new System.Drawing.Size(83, 20);
             this.cantidadtxt.TabIndex = 16;
@@ -352,7 +356,7 @@
             // fechatxt
             // 
             this.fechatxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fechatxt.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.fechatxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
             this.fechatxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.fechatxt.HintForeColor = System.Drawing.Color.Empty;
             this.fechatxt.HintText = "";
@@ -378,13 +382,27 @@
             this.clientes1.TabIndex = 23;
             this.clientes1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.Green;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_cancelar.Location = new System.Drawing.Point(550, 584);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(91, 32);
+            this.btn_cancelar.TabIndex = 26;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
             // frm_facturasventas
             // 
             this.AcceptButton = this.colocar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1119, 642);
+            this.ClientSize = new System.Drawing.Size(1119, 689);
+            this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.clientes1);
             this.Controls.Add(this.fechatxt);
             this.Controls.Add(this.cantidadtxt);
@@ -440,5 +458,6 @@
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox fechatxt;
         private System.Windows.Forms.Label clientes1;
+        private System.Windows.Forms.Button btn_cancelar;
     }
 }

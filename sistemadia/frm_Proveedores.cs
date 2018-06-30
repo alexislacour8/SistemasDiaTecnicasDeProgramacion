@@ -452,10 +452,5 @@ namespace sistemadia
         {
             descargarTextsBox();
         }
-
-        private void dtGridView_ProductosdelProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

@@ -44,7 +44,10 @@ namespace sistemadia
 
             factu = ds.Rows[0][0].ToString();
 
-
+            dataGridView1.Rows.Clear();
+            resultadotxt.Text = "";
+            cont_fila = 0;
+            totalidad = 0;
 
             autocompletar AU = new autocompletar();
             AU.AutoCompletar(productotxt);
@@ -86,7 +89,7 @@ namespace sistemadia
                 {
                     foreach (DataGridViewRow FILA in dataGridView1.Rows)
                     {
-                        if (FILA.Cells[0].Value.ToString() == codigoprotxt.Text)
+                        if (FILA.Cells[0].Value.ToString() == codigo)
                         {
                             existe = true;
                             num_fila = FILA.Index;
@@ -125,6 +128,19 @@ namespace sistemadia
 
 
             resultadotxt.Text ="$"+ totalidad.ToString("N2");
+            if (dataGridView1.Rows.Count==0)
+            {
+                btn_vender.Enabled = false ;
+                button1.Enabled = false ;
+                eliminar.Enabled = false;
+
+            }
+            else
+            {
+                btn_vender.Enabled = true;
+                button1.Enabled = true;
+                eliminar.Enabled = true;
+            }
         }
         SqlConnection cmm = new SqlConnection("Data Source=TCL;Initial Catalog=sistemadia;Integrated Security=True");
         private void productotxt_TextChanged(object sender, EventArgs e)
@@ -145,6 +161,19 @@ namespace sistemadia
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
 
                 cont_fila--;
+            }
+            if (dataGridView1.Rows.Count == 0)
+            {
+                btn_vender.Enabled = false;
+                button1.Enabled = false;
+                eliminar.Enabled = false;
+
+            }
+            else
+            {
+                btn_vender.Enabled = true;
+                button1.Enabled = true;
+                eliminar.Enabled = true;
             }
         }
 
@@ -221,6 +250,11 @@ namespace sistemadia
                     fer.dato.Add(c);
                 }
                 fer.ShowDialog();
+                dataGridView1.Rows.Clear();
+                resultadotxt.Text = "";
+                cont_fila = 0;
+                totalidad = 0;
+                productotxt.Focus();
             }
         }
 
@@ -333,6 +367,17 @@ namespace sistemadia
                 fer.dato.Add(c);
             }
             fer.ShowDialog();
+            dataGridView1.Rows.Clear();
+            resultadotxt.Text = "";
+            cont_fila = 0;
+            totalidad = 0;
+            productotxt.Focus();
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            resultadotxt.Text = "";
         }
     }
 }

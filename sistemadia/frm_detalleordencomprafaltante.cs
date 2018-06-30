@@ -31,6 +31,7 @@ namespace sistemadia
         private void frm_detalleordencomprafaltante_Load(object sender, EventArgs e)
         {
             dtView_detallefaltante.DataSource = orden.obtenerdetalleordencompra(ordencompra);
+            dtView_detallefaltante.Columns[0].Visible = false;
         }
         private void deshabilitarHeader()
         {

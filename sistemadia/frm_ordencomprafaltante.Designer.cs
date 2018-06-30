@@ -73,6 +73,9 @@
             this.dtView_ordenesdecomprafaltantes.RowHeadersVisible = false;
             this.dtView_ordenesdecomprafaltantes.Size = new System.Drawing.Size(552, 274);
             this.dtView_ordenesdecomprafaltantes.TabIndex = 6;
+            this.dtView_ordenesdecomprafaltantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.funcionclick);
+            this.dtView_ordenesdecomprafaltantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.funcionclick);
+            this.dtView_ordenesdecomprafaltantes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.funcionclick);
             // 
             // frm_ordencomprafaltante
             // 

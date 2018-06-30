@@ -73,8 +73,7 @@
             this.GridVw_ordenesSinRevisar.RowHeadersVisible = false;
             this.GridVw_ordenesSinRevisar.Size = new System.Drawing.Size(616, 453);
             this.GridVw_ordenesSinRevisar.TabIndex = 3;
-            this.GridVw_ordenesSinRevisar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.verdetalle);
-            this.GridVw_ordenesSinRevisar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.verdetalle);
+            this.GridVw_ordenesSinRevisar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.verdetalle);
             this.GridVw_ordenesSinRevisar.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridVw_producto_CellFormatting);
             // 
             // frm_stock

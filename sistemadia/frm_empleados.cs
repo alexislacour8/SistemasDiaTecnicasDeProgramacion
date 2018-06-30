@@ -35,6 +35,11 @@ namespace sistemadia
             txtbox_newuserdni.Focus();
             txtbox_newuserpassword.isPassword = true;
             GridVw_usuariosregistrados.Columns[2].Visible = false;
+            GridVw_usuariosregistrados.Columns[0].Visible = false;
+            GridVw_usuariosregistrados.Columns[1].ReadOnly = true;
+            GridVw_usuariosregistrados.Columns[3].ReadOnly = true;
+            GridVw_usuariosregistrados.Columns[4].ReadOnly = true;
+            GridVw_usuariosregistrados.Columns[5].ReadOnly = true;
         }
 
         public string dnio;
@@ -152,5 +157,7 @@ namespace sistemadia
         {
 
         }
+
+        
     }
 }

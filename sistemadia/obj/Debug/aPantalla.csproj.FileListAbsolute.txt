@@ -381,3 +381,6 @@ C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\
 C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.Frm_orden_compra.resources
 C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.selecion_ordendecompra.resources
 C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.cliente_factura.resources
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.cliente_factura.resources
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\sistemadia\bin\Debug\Control.dll.config
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\bin\Debug\Control.dll.config

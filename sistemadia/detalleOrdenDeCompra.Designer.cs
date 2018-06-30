@@ -98,11 +98,10 @@
             this.dtView_DetalleOrdenCompra.GridColor = System.Drawing.SystemColors.Control;
             this.dtView_DetalleOrdenCompra.Location = new System.Drawing.Point(87, 62);
             this.dtView_DetalleOrdenCompra.Name = "dtView_DetalleOrdenCompra";
-            this.dtView_DetalleOrdenCompra.ReadOnly = true;
             this.dtView_DetalleOrdenCompra.RowHeadersVisible = false;
             this.dtView_DetalleOrdenCompra.Size = new System.Drawing.Size(616, 274);
             this.dtView_DetalleOrdenCompra.TabIndex = 4;
-            this.dtView_DetalleOrdenCompra.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtView_DetalleOrdenCompra_CellFormatting);
+            this.dtView_DetalleOrdenCompra.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.comprobartabla);
             // 
             // detalleOrdenDeCompra
             // 

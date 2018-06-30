@@ -52,6 +52,9 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_selecionar = new System.Windows.Forms.Button();
+            this.btn_deseleccionar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtbox_seleccionado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridVw_usuariosregistrados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -74,7 +77,7 @@
             this.GridVw_usuariosregistrados.AllowUserToOrderColumns = true;
             this.GridVw_usuariosregistrados.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.GridVw_usuariosregistrados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridVw_usuariosregistrados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -83,7 +86,7 @@
             this.GridVw_usuariosregistrados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -131,61 +134,61 @@
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(120, 258);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 24);
+            this.comboBox1.Size = new System.Drawing.Size(147, 21);
             this.comboBox1.TabIndex = 8;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lbl_DNI
             // 
             this.lbl_DNI.AutoSize = true;
-            this.lbl_DNI.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DNI.Location = new System.Drawing.Point(175, 127);
             this.lbl_DNI.Name = "lbl_DNI";
-            this.lbl_DNI.Size = new System.Drawing.Size(27, 16);
+            this.lbl_DNI.Size = new System.Drawing.Size(26, 13);
             this.lbl_DNI.TabIndex = 14;
             this.lbl_DNI.Text = "DNI";
             // 
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_password.Location = new System.Drawing.Point(158, 188);
             this.lbl_password.Name = "lbl_password";
-            this.lbl_password.Size = new System.Drawing.Size(72, 16);
+            this.lbl_password.Size = new System.Drawing.Size(61, 13);
             this.lbl_password.TabIndex = 15;
             this.lbl_password.Text = "Contraseña";
             // 
             // lbl_permiso
             // 
             this.lbl_permiso.AutoSize = true;
-            this.lbl_permiso.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_permiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_permiso.Location = new System.Drawing.Point(175, 242);
             this.lbl_permiso.Name = "lbl_permiso";
-            this.lbl_permiso.Size = new System.Drawing.Size(48, 16);
+            this.lbl_permiso.Size = new System.Drawing.Size(44, 13);
             this.lbl_permiso.TabIndex = 17;
             this.lbl_permiso.Text = "Permiso";
             // 
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nombre.Location = new System.Drawing.Point(172, 285);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(51, 16);
+            this.lbl_nombre.Size = new System.Drawing.Size(44, 13);
             this.lbl_nombre.TabIndex = 18;
             this.lbl_nombre.Text = "Nombre";
             // 
             // lbl_apellido
             // 
             this.lbl_apellido.AutoSize = true;
-            this.lbl_apellido.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_apellido.Location = new System.Drawing.Point(175, 334);
             this.lbl_apellido.Name = "lbl_apellido";
-            this.lbl_apellido.Size = new System.Drawing.Size(51, 16);
+            this.lbl_apellido.Size = new System.Drawing.Size(44, 13);
             this.lbl_apellido.TabIndex = 19;
             this.lbl_apellido.Text = "Apellido";
             // 
@@ -238,7 +241,7 @@
             // txtbox_newuserapellido
             // 
             this.txtbox_newuserapellido.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_newuserapellido.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbox_newuserapellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtbox_newuserapellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbox_newuserapellido.HintForeColor = System.Drawing.Color.Empty;
             this.txtbox_newuserapellido.HintText = "";
@@ -258,7 +261,7 @@
             // txtbox_newusernombre
             // 
             this.txtbox_newusernombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_newusernombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbox_newusernombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtbox_newusernombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbox_newusernombre.HintForeColor = System.Drawing.Color.Empty;
             this.txtbox_newusernombre.HintText = "";
@@ -278,7 +281,7 @@
             // txtbox_newuserpassword
             // 
             this.txtbox_newuserpassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_newuserpassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbox_newuserpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtbox_newuserpassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbox_newuserpassword.HintForeColor = System.Drawing.Color.Empty;
             this.txtbox_newuserpassword.HintText = "";
@@ -298,7 +301,7 @@
             // txtbox_newuserdni
             // 
             this.txtbox_newuserdni.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_newuserdni.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbox_newuserdni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtbox_newuserdni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbox_newuserdni.HintForeColor = System.Drawing.Color.Empty;
             this.txtbox_newuserdni.HintText = "";
@@ -319,11 +322,11 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(124)))));
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(744, 122);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(223, 25);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(232, 25);
             this.bunifuCustomLabel1.TabIndex = 21;
             this.bunifuCustomLabel1.Text = "Crear Nuevo Usuario";
             // 
@@ -355,6 +358,32 @@
             this.btn_selecionar.UseVisualStyleBackColor = false;
             this.btn_selecionar.Click += new System.EventHandler(this.btn_selecionar_Click);
             // 
+            // btn_deseleccionar
+            // 
+            this.btn_deseleccionar.Location = new System.Drawing.Point(112, 636);
+            this.btn_deseleccionar.Name = "btn_deseleccionar";
+            this.btn_deseleccionar.Size = new System.Drawing.Size(89, 23);
+            this.btn_deseleccionar.TabIndex = 24;
+            this.btn_deseleccionar.Text = "Deseleccionar";
+            this.btn_deseleccionar.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(242, 641);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Seleccionado:";
+            // 
+            // txtbox_seleccionado
+            // 
+            this.txtbox_seleccionado.Location = new System.Drawing.Point(323, 636);
+            this.txtbox_seleccionado.Name = "txtbox_seleccionado";
+            this.txtbox_seleccionado.ReadOnly = true;
+            this.txtbox_seleccionado.Size = new System.Drawing.Size(100, 20);
+            this.txtbox_seleccionado.TabIndex = 26;
+            // 
             // frm_empleados
             // 
             this.AcceptButton = this.Guardar;
@@ -362,6 +391,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1050, 680);
+            this.Controls.Add(this.txtbox_seleccionado);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_deseleccionar);
             this.Controls.Add(this.btn_selecionar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bunifuCustomLabel1);
@@ -404,5 +436,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_selecionar;
         private System.Windows.Forms.Button btn_modificar;
+        private System.Windows.Forms.Button btn_deseleccionar;
+        private System.Windows.Forms.TextBox txtbox_seleccionado;
+        private System.Windows.Forms.Label label1;
     }
 }

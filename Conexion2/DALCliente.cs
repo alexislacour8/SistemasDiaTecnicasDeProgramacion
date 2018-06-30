@@ -14,7 +14,7 @@ namespace cDatos
 
         public DataTable listar_Clientes()
         {
-            string consulta = "SELECT ID_CLIENTE AS CODIGO,NOMBRE,APELLIDO,EMAIL,TIPO FROM CLIENTE WHERE HABILITADO=1";
+            string consulta = "SELECT ID_CLIENTE,NOMBRE,APELLIDO,EMAIL,TIPO FROM CLIENTE WHERE HABILITADO=1";
             DataTable clientes = conexion.LeerPorComando(consulta);
             return clientes;
         }

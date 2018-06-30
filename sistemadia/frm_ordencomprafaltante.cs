@@ -13,6 +13,8 @@ namespace sistemadia
         private void frm_ordencomprafaltante_Load(object sender, EventArgs e)
         {
             dtView_ordenesdecomprafaltantes.DataSource = ordencompra.obtenerOrdenesFaltante();
+            dtView_ordenesdecomprafaltantes.Columns[0].Visible = false;
+            dtView_ordenesdecomprafaltantes.Columns[1].Visible = false;
             deshabilitarHeader();
         }
         private void deshabilitarHeader()

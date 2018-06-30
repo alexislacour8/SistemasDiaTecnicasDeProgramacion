@@ -56,3 +56,5 @@ C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Cont
 C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\bControl.csproj.CopyComplete
 C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\Control.dll
 C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Debug\Control.pdb
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Debug\Control.dll.config
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Debug\Control.dll.config

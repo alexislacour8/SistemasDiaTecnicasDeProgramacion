@@ -33,6 +33,13 @@ namespace sistemadia
                 columnaselecionar.Name = "SELECCIONAR";
                 columnaselecionar.ReadOnly = false;
                 dtView_proveedores.Columns.AddRange(new DataGridViewColumn[] { columnaselecionar });
+                dtView_proveedores.Columns["COD_PRODUCTO"].ReadOnly = true;
+                dtView_proveedores.Columns[0].Visible = false;
+                dtView_proveedores.Columns[0].ReadOnly = true;
+                dtView_proveedores.Columns[1].ReadOnly = true;
+                dtView_proveedores.Columns[2].ReadOnly = true;
+                dtView_proveedores.Columns[3].ReadOnly = true;
+
             }
             deshabilitarHeader();
         }
