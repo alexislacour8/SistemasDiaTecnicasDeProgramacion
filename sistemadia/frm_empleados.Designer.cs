@@ -52,9 +52,6 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_selecionar = new System.Windows.Forms.Button();
-            this.btn_deseleccionar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtbox_seleccionado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridVw_usuariosregistrados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -358,32 +355,6 @@
             this.btn_selecionar.UseVisualStyleBackColor = false;
             this.btn_selecionar.Click += new System.EventHandler(this.btn_selecionar_Click);
             // 
-            // btn_deseleccionar
-            // 
-            this.btn_deseleccionar.Location = new System.Drawing.Point(112, 636);
-            this.btn_deseleccionar.Name = "btn_deseleccionar";
-            this.btn_deseleccionar.Size = new System.Drawing.Size(89, 23);
-            this.btn_deseleccionar.TabIndex = 24;
-            this.btn_deseleccionar.Text = "Deseleccionar";
-            this.btn_deseleccionar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(242, 641);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Seleccionado:";
-            // 
-            // txtbox_seleccionado
-            // 
-            this.txtbox_seleccionado.Location = new System.Drawing.Point(323, 636);
-            this.txtbox_seleccionado.Name = "txtbox_seleccionado";
-            this.txtbox_seleccionado.ReadOnly = true;
-            this.txtbox_seleccionado.Size = new System.Drawing.Size(100, 20);
-            this.txtbox_seleccionado.TabIndex = 26;
-            // 
             // frm_empleados
             // 
             this.AcceptButton = this.Guardar;
@@ -391,9 +362,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1050, 680);
-            this.Controls.Add(this.txtbox_seleccionado);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_deseleccionar);
             this.Controls.Add(this.btn_selecionar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bunifuCustomLabel1);
@@ -436,8 +404,5 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_selecionar;
         private System.Windows.Forms.Button btn_modificar;
-        private System.Windows.Forms.Button btn_deseleccionar;
-        private System.Windows.Forms.TextBox txtbox_seleccionado;
-        private System.Windows.Forms.Label label1;
     }
 }

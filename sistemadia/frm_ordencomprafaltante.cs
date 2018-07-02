@@ -28,16 +28,17 @@ namespace sistemadia
 
         private void funcionclick(object sender, DataGridViewCellEventArgs e)
         {
-            frm_detalleordencomprafaltante com = new frm_detalleordencomprafaltante(dtView_ordenesdecomprafaltantes.Rows[e.RowIndex].Cells["ID_ORDENCOMPRA"].Value.ToString());
+            if (e.RowIndex>=0) { 
+                frm_detalleordencomprafaltante com = new frm_detalleordencomprafaltante(dtView_ordenesdecomprafaltantes.Rows[e.RowIndex].Cells["ID_ORDENCOMPRA"].Value.ToString());
 
-            com.ShowDialog();
-            if(com.DialogResult == DialogResult.OK)
-            {
-                ordencompra.actualizarfaltante(dtView_ordenesdecomprafaltantes.Rows[e.RowIndex].Cells["ID_ORDENCOMPRA"].Value.ToString());
+                com.ShowDialog();
+                if(com.DialogResult == DialogResult.OK)
+                {
+                    ordencompra.actualizarfaltante(dtView_ordenesdecomprafaltantes.Rows[e.RowIndex].Cells["ID_ORDENCOMPRA"].Value.ToString());
+                }
+                dtView_ordenesdecomprafaltantes.DataSource = ordencompra.obtenerOrdenesFaltante();
+                deshabilitarHeader();
             }
-            dtView_ordenesdecomprafaltantes.DataSource = ordencompra.obtenerOrdenesFaltante();
-            deshabilitarHeader();
-
         }
     }
 }

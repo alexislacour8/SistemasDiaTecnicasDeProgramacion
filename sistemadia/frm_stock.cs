@@ -26,6 +26,7 @@ namespace sistemadia
 
             GridVw_ordenesSinRevisar.DataSource = ordenDeCompra.obtenerordenesdecomprasinrevisar();
             GridVw_ordenesSinRevisar.Columns[0].Visible = false;
+            deshabilitarHeader();
             
 
         }
@@ -133,30 +134,41 @@ namespace sistemadia
 
         private void verdetalle(object sender, DataGridViewCellEventArgs e)
         {
-            string id_ordenDeCompra = GridVw_ordenesSinRevisar.Rows[e.RowIndex].Cells["ID_ORDENCOMPRA"].Value.ToString();
-            detalleOrdenDeCompra detalle = new detalleOrdenDeCompra(id_ordenDeCompra);
-            detalle.ShowDialog();
-            if (detalle.DialogResult== DialogResult.OK)
-            {
-                DataTable tablaconfirmada = new DataTable();
-                tablaconfirmada.Columns.Add("ID_PRODUCTO");
-                tablaconfirmada.Columns.Add("CANTIDADREAL");
-                tablaconfirmada.Columns.Add("CANTIDAD");
-                foreach (DataGridViewRow item in detalle.dtView_DetalleOrdenCompra.Rows)
+            if (e.RowIndex>=0) { 
+                string id_ordenDeCompra = GridVw_ordenesSinRevisar.Rows[e.RowIndex].Cells["ID_ORDENCOMPRA"].Value.ToString();
+                detalleOrdenDeCompra detalle = new detalleOrdenDeCompra(id_ordenDeCompra);
+                detalle.ShowDialog();
+                if (detalle.DialogResult== DialogResult.OK)
                 {
-                    string id_producto = item.Cells["ID_PRODUCTO"].Value.ToString();
-                    string cantidadtextox = item.Cells["CANTIDADREAL"].Value.ToString();
-                    DataRow nuevoa = tablaconfirmada.NewRow();
-                    nuevoa["CANTIDADREAL"] = cantidadtextox;
-                    nuevoa["ID_PRODUCTO"] = id_producto;
-                    nuevoa["CANTIDAD"] = item.Cells["CANTIDAD"].Value.ToString();
-                    tablaconfirmada.Rows.Add(nuevoa);
+                    DataTable tablaconfirmada = new DataTable();
+                    tablaconfirmada.Columns.Add("ID_PRODUCTO");
+                    tablaconfirmada.Columns.Add("CANTIDADREAL");
+                    tablaconfirmada.Columns.Add("CANTIDAD");
+                    foreach (DataGridViewRow item in detalle.dtView_DetalleOrdenCompra.Rows)
+                    {
+                        string id_producto = item.Cells["ID_PRODUCTO"].Value.ToString();
+                        string cantidadtextox = item.Cells["CANTIDADREAL"].Value.ToString();
+                        DataRow nuevoa = tablaconfirmada.NewRow();
+                        nuevoa["CANTIDADREAL"] = cantidadtextox;
+                        nuevoa["ID_PRODUCTO"] = id_producto;
+                        nuevoa["CANTIDAD"] = item.Cells["CANTIDAD"].Value.ToString();
+                        tablaconfirmada.Rows.Add(nuevoa);
 
+                    }
+                    ordenDeCompra.confirmarordendecompra(id_ordenDeCompra,tablaconfirmada);
+                    GridVw_ordenesSinRevisar.DataSource = ordenDeCompra.obtenerordenesdecomprasinrevisar();
                 }
-                ordenDeCompra.confirmarordendecompra(id_ordenDeCompra,tablaconfirmada);
-                GridVw_ordenesSinRevisar.DataSource = ordenDeCompra.obtenerordenesdecomprasinrevisar();
             }
 
+        }
+
+        private void deshabilitarHeader()
+        {
+            foreach (DataGridViewColumn columna in GridVw_ordenesSinRevisar.Columns)
+            {
+
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
     }
 }

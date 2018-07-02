@@ -381,6 +381,7 @@
             this.clientes1.Size = new System.Drawing.Size(100, 23);
             this.clientes1.TabIndex = 23;
             this.clientes1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.clientes1.Visible = false;
             // 
             // btn_cancelar
             // 

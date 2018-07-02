@@ -52,6 +52,11 @@ namespace sistemadia
             autocompletar AU = new autocompletar();
             AU.AutoCompletar(productotxt);
             productotxt.Focus();
+            deshabilitarHeader();
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.Columns[4].ReadOnly = true;
         }
         public static decimal totalidad;
         public static int cont_fila = 0;
@@ -142,7 +147,7 @@ namespace sistemadia
                 eliminar.Enabled = true;
             }
         }
-        SqlConnection cmm = new SqlConnection("Data Source=TCL;Initial Catalog=sistemadia;Integrated Security=True");
+        SqlConnection cmm = new SqlConnection("workstation id=sistemadia.mssql.somee.com;packet size=4096;user id=miguel2_SQLLogin_1;pwd=6xvz3jtus7;data source=sistemadia.mssql.somee.com;persist security info=False;initial catalog=sistemadia");
         private void productotxt_TextChanged(object sender, EventArgs e)
         {
           
@@ -183,7 +188,7 @@ namespace sistemadia
         }
         public void completar()
         {
-            string sql = "select ID_CLIENTE FROM CLIENTE WHERE HABILITADO = 1 AND NOMBRE='" + completa + " '";
+            string sql = "select ID_CLIENTE FROM CLIENTE WHERE HABILITADO = 1 AND TIPO='" + completa + " '";
             SqlCommand coman = new SqlCommand(sql, cmm);
 
             cmm.Open();
@@ -194,6 +199,7 @@ namespace sistemadia
 
 
             }
+            cmm.Close();
         }
         public string codigocliente;
         public string completa ="consumidor final";
@@ -378,6 +384,30 @@ namespace sistemadia
         {
             dataGridView1.Rows.Clear();
             resultadotxt.Text = "";
+            cont_fila = 0;
+            totalidad = 0;
+            if (dataGridView1.Rows.Count == 0)
+            {
+                btn_vender.Enabled = false;
+                button1.Enabled = false;
+                eliminar.Enabled = false;
+
+            }
+            else
+            {
+                btn_vender.Enabled = true;
+                button1.Enabled = true;
+                eliminar.Enabled = true;
+            }
+        }
+
+        private void deshabilitarHeader()
+        {
+            foreach (DataGridViewColumn columna in dataGridView1.Columns)
+            {
+
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
     }
 }

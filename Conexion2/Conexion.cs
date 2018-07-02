@@ -13,7 +13,7 @@ namespace cDatos
     public class Conexion
     {
         private SqlConnection objConexion;
-        private string strCadenaDeConexion = "Data Source=TCL;Initial Catalog=sistemadia;Integrated Security=True";
+        private string strCadenaDeConexion = "workstation id=sistemadia.mssql.somee.com;packet size=4096;user id=miguel2_SQLLogin_1;pwd=6xvz3jtus7;data source=sistemadia.mssql.somee.com;persist security info=False;initial catalog=sistemadia";
 
 
         /* -------------------- private void Conectar() ------------ 

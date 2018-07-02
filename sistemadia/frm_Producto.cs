@@ -36,6 +36,7 @@ namespace sistemadia
             GridVw_producto.Columns[2].ReadOnly = true;
             GridVw_producto.Columns[3].ReadOnly = true;
             GridVw_producto.Columns[4].ReadOnly = true;
+            deshabilitarHeader();
 
 
 
@@ -71,15 +72,8 @@ namespace sistemadia
             }
             else
             {
-                DataTable dt;
-                dt = producto.produccodigo(codigo);
-                cod = dt.Rows[0][0].ToString();
-                if (cod == codigo_productotxt.Text.Trim())
-                {
-                    MessageBox.Show("este codigo ya exites");
-                }
-                else
-                {
+                
+                
                     
 
                    if(producto.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text))
@@ -101,7 +95,7 @@ namespace sistemadia
 
                     }
                    
-                }
+                
 
             }
             codigo_productotxt.Text = string.Empty;
@@ -131,6 +125,30 @@ namespace sistemadia
             {
 
                 columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+
+        private void GridVw_producto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.GridVw_producto.Columns[e.ColumnIndex].Name == "DISPONIBILIDAD")
+            {
+                if (Convert.ToInt32(e.Value) <= 1000)
+                {
+                    e.CellStyle.ForeColor = Color.Black;
+                    e.CellStyle.BackColor = Color.Green;
+                    if (Convert.ToInt32(e.Value) <= 300)
+                    {
+                        e.CellStyle.ForeColor = Color.Black;
+                        e.CellStyle.BackColor = Color.Yellow;
+                        if (Convert.ToInt32(e.Value) <= 150)
+                        {
+                            e.CellStyle.ForeColor = Color.Black;
+                            e.CellStyle.BackColor = Color.Red;
+
+                        }
+
+                    }
+                }
             }
         }
 

@@ -66,7 +66,7 @@
             this.GridVw_producto.AllowUserToOrderColumns = true;
             this.GridVw_producto.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.GridVw_producto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridVw_producto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -75,7 +75,7 @@
             this.GridVw_producto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -84,7 +84,7 @@
             this.GridVw_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -97,6 +97,7 @@
             this.GridVw_producto.RowHeadersVisible = false;
             this.GridVw_producto.Size = new System.Drawing.Size(621, 510);
             this.GridVw_producto.TabIndex = 2;
+            this.GridVw_producto.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridVw_producto_CellFormatting);
             // 
             // pictureBox1
             // 
@@ -111,14 +112,13 @@
             // lbl_Nuevo_Producto
             // 
             this.lbl_Nuevo_Producto.AutoSize = true;
-            this.lbl_Nuevo_Producto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Nuevo_Producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Nuevo_Producto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(124)))));
             this.lbl_Nuevo_Producto.Location = new System.Drawing.Point(117, 25);
             this.lbl_Nuevo_Producto.Name = "lbl_Nuevo_Producto";
-            this.lbl_Nuevo_Producto.Size = new System.Drawing.Size(158, 23);
+            this.lbl_Nuevo_Producto.Size = new System.Drawing.Size(161, 24);
             this.lbl_Nuevo_Producto.TabIndex = 16;
             this.lbl_Nuevo_Producto.Text = "Nuevo Producto";
-           
             // 
             // lbl_Tipo
             // 
@@ -228,7 +228,7 @@
             this.tipotxt.BorderColorMouseHover = System.Drawing.Color.DarkBlue;
             this.tipotxt.BorderThickness = 2;
             this.tipotxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tipotxt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tipotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.tipotxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tipotxt.isPassword = false;
             this.tipotxt.Location = new System.Drawing.Point(113, 412);
@@ -245,7 +245,7 @@
             this.preciotxt.BorderColorMouseHover = System.Drawing.Color.DarkBlue;
             this.preciotxt.BorderThickness = 2;
             this.preciotxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.preciotxt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.preciotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.preciotxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.preciotxt.isPassword = false;
             this.preciotxt.Location = new System.Drawing.Point(113, 359);
@@ -254,7 +254,6 @@
             this.preciotxt.Size = new System.Drawing.Size(166, 32);
             this.preciotxt.TabIndex = 19;
             this.preciotxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-    
             this.preciotxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preciotxt_KeyPress);
             // 
             // disponibilidadtxt
@@ -264,7 +263,7 @@
             this.disponibilidadtxt.BorderColorMouseHover = System.Drawing.Color.DarkBlue;
             this.disponibilidadtxt.BorderThickness = 2;
             this.disponibilidadtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.disponibilidadtxt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.disponibilidadtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.disponibilidadtxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.disponibilidadtxt.isPassword = false;
             this.disponibilidadtxt.Location = new System.Drawing.Point(113, 303);
@@ -282,7 +281,7 @@
             this.nombreproductotxt.BorderColorMouseHover = System.Drawing.Color.DarkBlue;
             this.nombreproductotxt.BorderThickness = 2;
             this.nombreproductotxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nombreproductotxt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.nombreproductotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.nombreproductotxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nombreproductotxt.isPassword = false;
             this.nombreproductotxt.Location = new System.Drawing.Point(113, 252);
@@ -299,7 +298,7 @@
             this.codigo_productotxt.BorderColorMouseHover = System.Drawing.Color.DarkBlue;
             this.codigo_productotxt.BorderThickness = 2;
             this.codigo_productotxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.codigo_productotxt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.codigo_productotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.codigo_productotxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.codigo_productotxt.isPassword = false;
             this.codigo_productotxt.Location = new System.Drawing.Point(113, 202);
@@ -330,11 +329,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Green;
             this.label2.Location = new System.Drawing.Point(54, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 19);
+            this.label2.Size = new System.Drawing.Size(27, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "lab";
             // 
@@ -360,11 +359,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.25F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(30, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(69, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Productos";
             // 

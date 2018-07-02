@@ -40,6 +40,7 @@ namespace sistemadia
             GridVw_usuariosregistrados.Columns[3].ReadOnly = true;
             GridVw_usuariosregistrados.Columns[4].ReadOnly = true;
             GridVw_usuariosregistrados.Columns[5].ReadOnly = true;
+            deshabilitarHeader();
         }
 
         public string dnio;
@@ -130,7 +131,6 @@ namespace sistemadia
                 txtbox_newuserdni.Text = GridVw_usuariosregistrados.CurrentRow.Cells[1].Value.ToString();
                 txtbox_newusernombre.Text = GridVw_usuariosregistrados.CurrentRow.Cells[4].Value.ToString();
                txtbox_newuserapellido.Text = GridVw_usuariosregistrados.CurrentRow.Cells[5].Value.ToString();
-               txtbox_newuserpassword.Text = GridVw_usuariosregistrados.CurrentRow.Cells[2].Value.ToString();
                 comboBox1.Text = GridVw_usuariosregistrados.CurrentRow.Cells[3].Value.ToString();
             }
         }
@@ -158,6 +158,13 @@ namespace sistemadia
 
         }
 
-        
+        private void deshabilitarHeader()
+        {
+            foreach (DataGridViewColumn columna in GridVw_usuariosregistrados.Columns)
+            {
+
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
     }
 }

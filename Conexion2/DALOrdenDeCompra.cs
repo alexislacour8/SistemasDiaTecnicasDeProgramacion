@@ -62,16 +62,19 @@ namespace cDatos
                 string stringdisponibilidad=auxiliar.Rows[0]["DISPONIBILIDAD"].ToString();
                 int disponibilidadreal = int.Parse(stringdisponibilidad) + int.Parse(cantidadreal);
 
-                string consultaproducto = string.Format("UPDATE PRODUCTO SET DISPONIBILIDAD={0} WHERE ID_PRODUCTO={1}",cantidadreal.ToString(),id_producto);
+                string consultaproducto = string.Format("UPDATE PRODUCTO SET DISPONIBILIDAD={0} WHERE ID_PRODUCTO={1}",disponibilidadreal.ToString(),id_producto);
+                conexion.EscribirPorComando(consultaproducto);
             }
         }
 
         public void insertarordenfaltante(string id_ordendecompra, DataTable acomprar)
         {
-            string consultadeid = string.Format("SELECT MAX(ID_ORDENCOMPRA) AS ID_ORDENCOMPRA,ID_PROVEDOR FROM ORDENCOMPRA WHERE ID_ORDENCOMPRA={0} GROUP BY ID_PROVEDOR", id_ordendecompra);
+            string consultadeid = "SELECT MAX(ID_ORDENCOMPRA) AS ID_ORDENCOMPRA FROM ORDENCOMPRA ";
+            string consultaidproveedor = string.Format("SELECT ID_PROVEDOR FROM ORDENCOMPRA WHERE ID_ORDENCOMPRA={0}", id_ordendecompra);
             DataTable ultimaidtable = conexion.LeerPorComando(consultadeid);
+            DataTable idprovedordt = conexion.LeerPorComando(consultaidproveedor);
             string ultimaid = ultimaidtable.Rows[0]["ID_ORDENCOMPRA"].ToString();
-            string idprovedor = ultimaidtable.Rows[0]["ID_PROVEDOR"].ToString();
+            string idprovedor = idprovedordt.Rows[0]["ID_PROVEDOR"].ToString();
             if (ultimaid == null || ultimaid == "")
             {
                 ultimaid = "0";
