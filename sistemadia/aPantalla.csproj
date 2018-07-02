@@ -162,6 +162,12 @@
     <Compile Include="reporte_factura.Designer.cs">
       <DependentUpon>reporte_factura.cs</DependentUpon>
     </Compile>
+    <Compile Include="reporte_rasonsicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporte_rasonsicial.Designer.cs">
+      <DependentUpon>reporte_rasonsicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="selecion_ordendecompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,8 +232,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report2_rasoncial .rdlc" />
     <EmbeddedResource Include="reporte_factura.resx">
       <DependentUpon>reporte_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporte_rasonsicial.resx">
+      <DependentUpon>reporte_rasonsicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportfactura.rdlc">
       <SubType>Designer</SubType>
@@ -236,7 +246,57 @@
       <DependentUpon>selecion_ordendecompra.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\bControl.reportefacutrclientes.datasource" />
     <None Include="Properties\DataSources\bControl.reportfactu.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+CLIENTEDataTable.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+CLIENTERow.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+CLIENTERowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+CLIENTERowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+DETALLEDataTable.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+DETALLEORDENCOMPRADataTable.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+DETALLEORDENCOMPRARow.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+DETALLEORDENCOMPRARowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+DETALLEORDENCOMPRARowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+DETALLERow.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+DETALLERowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+DETALLERowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+ORDENCOMPRADataTable.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+ORDENCOMPRARow.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+ORDENCOMPRARowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+ORDENCOMPRARowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PRODUCTODataTable.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PRODUCTORow.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PRODUCTORowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PRODUCTORowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PROVEDORDataTable.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PROVEDORRow.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PROVEDORRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PROVEDORRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PROVEEDataTable.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PROVEERow.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PROVEERowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+PROVEERowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+USUARIODataTable.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+USUARIORow.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+USUARIORowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+USUARIORowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+VENTADataTable.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+VENTARow.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+VENTARowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet+VENTARowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSet.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.CLIENTETableAdapter.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.DETALLEORDENCOMPRATableAdapter.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.DETALLETableAdapter.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.ORDENCOMPRATableAdapter.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.PRODUCTOTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.PROVEDORTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.PROVEETableAdapter.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.QueriesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.USUARIOTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Control.sistemadiatomasDataSetTableAdapters.VENTATableAdapter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -49,12 +49,17 @@ namespace bControl
 
         public bool Agregar(string nombre, string disponiblidad, string precio, string tipo, string codigo_producto)
         {
+            if (conexion.comprobarexistente1(nombre,codigo_producto)) { 
             
                     conexion.insertarproducto(nombre, disponiblidad, precio, tipo, codigo_producto);
                     return true;
-                  
-                
-               
+
+            }
+            else
+            {
+                return false;
+            }
+
         }
         public DataTable CONTAR()
         {

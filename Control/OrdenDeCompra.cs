@@ -58,14 +58,11 @@ namespace bControl
                     int cantidad, cantidadreal;
                     cantidad = int.Parse(item["CANTIDAD"].ToString());
                     cantidadreal = cantidad - int.Parse(item["CANTIDADREAL"].ToString());
-                    if (cantidad < 0)
-                    {
-                        cantidadreal = 0;
-                    }
+                    
 
                     DataRow nuevoa = tabladefaltantes.NewRow();
                     nuevoa["ID_PRODUCTO"] = id_producto;
-                    nuevoa["CANTIDAD"] = cantidad;
+                    nuevoa["CANTIDAD"] = cantidadreal;
                     tabladefaltantes.Rows.Add(nuevoa);
                 }
                 

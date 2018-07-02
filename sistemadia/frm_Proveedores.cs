@@ -362,6 +362,7 @@ namespace sistemadia
                 }
                 
             }
+            MessageBox.Show("La operacion fue realizada con exito");
         }
 
         private void checkboxeliminaractiva(object sender, DataGridViewCellEventArgs e)
@@ -451,6 +452,10 @@ namespace sistemadia
         private void btn_deseleccionar_Click_1(object sender, EventArgs e)
         {
             descargarTextsBox();
+            
+            dtGridView_ProductosdelProveedor.DataSource = null;
+            dtGridView_ProductosdelProveedor.Columns.Clear();
+
         }
     }
 }

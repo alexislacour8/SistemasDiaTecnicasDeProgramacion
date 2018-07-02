@@ -13,7 +13,8 @@ namespace bControl
         public string cantidad { get; set; }
         public decimal importe { get; set; }
         public string fecha { get; set; }
-      
         public string total { get; set; }
+        public string iva { get; set; }
+        public string rasonciol { get; set; }
     }
 }

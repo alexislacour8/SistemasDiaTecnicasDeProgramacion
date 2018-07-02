@@ -16,11 +16,11 @@ namespace sistemadia
         {
             InitializeComponent();
         }
-        public List<bControl.reportfactu> dato = new List<bControl.reportfactu>();
+        public List<bControl.reportfactu> datos = new List<bControl.reportfactu>();
         private void reporte_factura_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dato));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", datos));
             this.reportViewer1.RefreshReport();
         }
 

@@ -220,6 +220,7 @@
             // btn_modificar
             // 
             this.btn_modificar.BackColor = System.Drawing.Color.Green;
+            this.btn_modificar.Enabled = false;
             this.btn_modificar.FlatAppearance.BorderSize = 0;
             this.btn_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

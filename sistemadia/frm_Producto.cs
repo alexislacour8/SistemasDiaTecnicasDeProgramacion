@@ -76,24 +76,43 @@ namespace sistemadia
                 
                     
 
-                   if(producto.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text))
-                    {
-                        DataTable DD;
-                        DD = producto.CONTAR();
-                        label2.Text = DD.Rows[0][0].ToString();
+                if(producto.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text))
+                {
+                    DataTable DD;
+                    DD = producto.CONTAR();
+                    label2.Text = DD.Rows[0][0].ToString();
 
-                        MessageBox.Show("Se ha creado un nuevo producto");
-                        DataTable ds;
-                        ds = producto.productolist();
-                        GridVw_producto.DataSource = ds;
-                        GridVw_producto.Columns[0].ReadOnly = true;
-                        GridVw_producto.Columns[1].ReadOnly = true;
-                        GridVw_producto.Columns[2].ReadOnly = true;
-                        GridVw_producto.Columns[3].ReadOnly = true;
-                        GridVw_producto.Columns[4].ReadOnly = true;
-                        deshabilitarHeader();
+                    MessageBox.Show("Se ha creado un nuevo producto");
+                    DataTable ds;
+                    ds = producto.productolist();
+                    GridVw_producto.DataSource = ds;
+                    GridVw_producto.Columns[0].ReadOnly = true;
+                    GridVw_producto.Columns[1].ReadOnly = true;
+                    GridVw_producto.Columns[2].ReadOnly = true;
+                    GridVw_producto.Columns[3].ReadOnly = true;
+                    GridVw_producto.Columns[4].ReadOnly = true;
+                    deshabilitarHeader();
 
-                    }
+                }
+                else
+                {
+                    producto.actualizar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text);
+                    DataTable DD;
+                    DD = producto.CONTAR();
+                    label2.Text = DD.Rows[0][0].ToString();
+
+                    MessageBox.Show("Se ha modificado un producto");
+                    DataTable ds;
+                    ds = producto.productolist();
+                    GridVw_producto.DataSource = ds;
+                    GridVw_producto.Columns[0].ReadOnly = true;
+                    GridVw_producto.Columns[1].ReadOnly = true;
+                    GridVw_producto.Columns[2].ReadOnly = true;
+                    GridVw_producto.Columns[3].ReadOnly = true;
+                    GridVw_producto.Columns[4].ReadOnly = true;
+                    deshabilitarHeader();
+                }
+                    
                    
                 
 

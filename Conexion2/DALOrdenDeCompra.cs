@@ -85,8 +85,10 @@ namespace cDatos
 
             foreach (DataRow i in acomprar.Rows)
             {
-                string comandodetalle = string.Format("INSERT INTO DETALLEORDENCOMPRA (ID_ORDENCOMPRA,ID_PRODUCTO,CANTIDAD) VALUES ({0},{1},{2})", id.ToString(), i["ID_PRODUCTO"].ToString(), i["CANTIDAD"]);
-                conexion.EscribirPorComando(comandodetalle);
+                
+                    string comandodetalle = string.Format("INSERT INTO DETALLEORDENCOMPRA (ID_ORDENCOMPRA,ID_PRODUCTO,CANTIDAD) VALUES ({0},{1},{2})", id.ToString(), i["ID_PRODUCTO"].ToString(), i["CANTIDAD"]);
+                    conexion.EscribirPorComando(comandodetalle);
+                
             }
         }
         public DataTable obtenerordendecomprafaltantes()

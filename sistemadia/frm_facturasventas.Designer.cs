@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_facturasventas));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CODIGO_PROD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +39,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoprotxt = new System.Windows.Forms.TextBox();
             this.preciotxt = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txtnombre = new System.Windows.Forms.Label();
@@ -59,6 +58,10 @@
             this.fechatxt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.clientes1 = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.codigoprotxt = new System.Windows.Forms.TextBox();
+            this.ivatex = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,14 +75,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeight = 25;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -88,14 +91,14 @@
             this.Column3,
             this.Column4,
             this.Column8});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
             this.dataGridView1.Location = new System.Drawing.Point(26, 221);
@@ -126,23 +129,15 @@
             // 
             // Column8
             // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column8.HeaderText = "IMPORTE";
             this.Column8.Name = "Column8";
             // 
-            // codigoprotxt
-            // 
-            this.codigoprotxt.Location = new System.Drawing.Point(26, 195);
-            this.codigoprotxt.Name = "codigoprotxt";
-            this.codigoprotxt.Size = new System.Drawing.Size(87, 20);
-            this.codigoprotxt.TabIndex = 1;
-            this.codigoprotxt.Visible = false;
-            // 
             // preciotxt
             // 
-            this.preciotxt.Location = new System.Drawing.Point(400, 195);
+            this.preciotxt.Location = new System.Drawing.Point(529, 171);
             this.preciotxt.Name = "preciotxt";
             this.preciotxt.Size = new System.Drawing.Size(78, 20);
             this.preciotxt.TabIndex = 4;
@@ -338,9 +333,9 @@
             this.productotxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.productotxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.productotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.productotxt.Location = new System.Drawing.Point(140, 194);
+            this.productotxt.Location = new System.Drawing.Point(250, 198);
             this.productotxt.Name = "productotxt";
-            this.productotxt.Size = new System.Drawing.Size(114, 21);
+            this.productotxt.Size = new System.Drawing.Size(134, 21);
             this.productotxt.TabIndex = 15;
             this.productotxt.TextChanged += new System.EventHandler(this.productotxt_TextChanged_1);
             // 
@@ -348,7 +343,7 @@
             // 
             this.cantidadtxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cantidadtxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cantidadtxt.Location = new System.Drawing.Point(276, 194);
+            this.cantidadtxt.Location = new System.Drawing.Point(486, 198);
             this.cantidadtxt.Name = "cantidadtxt";
             this.cantidadtxt.Size = new System.Drawing.Size(83, 20);
             this.cantidadtxt.TabIndex = 16;
@@ -396,6 +391,45 @@
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(415, 201);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "CANTIDAD:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(123, 201);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 13);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "NOMBRE PRODUCTO:";
+            // 
+            // codigoprotxt
+            // 
+            this.codigoprotxt.Location = new System.Drawing.Point(36, 152);
+            this.codigoprotxt.Name = "codigoprotxt";
+            this.codigoprotxt.ReadOnly = true;
+            this.codigoprotxt.Size = new System.Drawing.Size(87, 20);
+            this.codigoprotxt.TabIndex = 1;
+            this.codigoprotxt.Visible = false;
+            // 
+            // ivatex
+            // 
+            this.ivatex.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ivatex.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ivatex.Location = new System.Drawing.Point(470, 593);
+            this.ivatex.Name = "ivatex";
+            this.ivatex.Size = new System.Drawing.Size(69, 23);
+            this.ivatex.TabIndex = 29;
+            this.ivatex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ivatex.Visible = false;
+            // 
             // frm_facturasventas
             // 
             this.AcceptButton = this.colocar;
@@ -403,6 +437,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1119, 689);
+            this.Controls.Add(this.ivatex);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.clientes1);
             this.Controls.Add(this.fechatxt);
@@ -435,7 +472,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox codigoprotxt;
         private System.Windows.Forms.TextBox preciotxt;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label txtnombre;
@@ -460,5 +496,9 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox fechatxt;
         private System.Windows.Forms.Label clientes1;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox codigoprotxt;
+        private System.Windows.Forms.Label ivatex;
     }
 }

@@ -11,9 +11,9 @@ namespace cDatos
     public class DALProducto
     {
         cDatos.Conexion conexionpro = new cDatos.Conexion();
-        public bool comprobarexistente1(string producto)
+        public bool comprobarexistente1(string producto,string codigo)
         {
-            string comprobarexistente = String.Format("SELECT NOMBRE FROM PRODUCTO WHERE NOMBRE='{0}' AND HABILITADO=1", producto);
+            string comprobarexistente = String.Format("SELECT NOMBRE FROM PRODUCTO WHERE NOMBRE='{0}' OR COD_PRODUCTO='{1}' AND HABILITADO=1", producto,codigo);
             DataTable tabladeexistentes = conexionpro.LeerPorComando(comprobarexistente);
             int numeroDeExistentes = tabladeexistentes.Rows.Count;
             if (numeroDeExistentes == 0)
@@ -100,12 +100,11 @@ namespace cDatos
             Decimal pre;
             Decimal.TryParse(PRECIO, out pre);
 
-            SqlParameter[] parametros = new SqlParameter[5];
+            SqlParameter[] parametros = new SqlParameter[4];
             parametros[0] = conexionpro.crearParametro("@NOMBRE", NOMBRE);
-            parametros[1] = conexionpro.crearParametro("@DISPONIBILIDAD", DISPONIBILIDAD);
-            parametros[2] = conexionpro.crearParametro("@PRECIO", PRECIO);
-            parametros[3] = conexionpro.crearParametro("@TIPO", TIPO);
-            parametros[4] = conexionpro.crearParametro("@COD_PRODUCTO", COD_PRODUCTO);
+            parametros[1] = conexionpro.crearParametro("@PRECIO", PRECIO);
+            parametros[2] = conexionpro.crearParametro("@TIPO", TIPO);
+            parametros[3] = conexionpro.crearParametro("@COD_PRODUCTO", COD_PRODUCTO);
 
             conexionpro.EscribirPorStoreProcedure("MODIFICARPRODUCTO", parametros);
 

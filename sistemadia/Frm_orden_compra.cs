@@ -126,6 +126,19 @@ namespace sistemadia
         {
             //falta esta funcionalidad
 
+            dtView_ordendecompra.Rows.RemoveAt(dtView_ordendecompra.CurrentRow.Index);
+            if (dtView_ordendecompra.Rows.Count == 0)
+            {
+                btn_vender.Enabled = false;
+                eliminar.Enabled = false;
+
+            }
+            else
+            {
+                btn_vender.Enabled = true;
+                eliminar.Enabled = true;
+            }
+
         }
 
         bControl.OrdenDeCompra conexionordendecompra = new bControl.OrdenDeCompra();

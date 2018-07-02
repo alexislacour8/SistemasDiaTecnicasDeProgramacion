@@ -8,3 +8,13 @@ C:\Users\alexis\Pictures\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Re
 C:\Users\alexis\Pictures\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Release\bControl.csproj.CoreCompileInputs.cache
 C:\Users\alexis\Pictures\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Release\Control.dll
 C:\Users\alexis\Pictures\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Release\Control.pdb
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Release\Control.dll.config
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Release\Control.dll
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Release\Control.pdb
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Release\Conexion2.dll
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Release\Conexion2.pdb
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\bin\Release\Conexion2.dll.config
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Release\bControl.csprojResolveAssemblyReference.cache
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Release\bControl.csproj.CoreCompileInputs.cache
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Release\Control.dll
+C:\Users\alexis\Desktop\sistemas\SistemasDiaTecnicasDeProgramacion-master\Control\obj\Release\Control.pdb

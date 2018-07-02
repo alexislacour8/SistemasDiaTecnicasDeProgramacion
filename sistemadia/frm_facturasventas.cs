@@ -55,10 +55,12 @@ namespace sistemadia
             deshabilitarHeader();
             dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[2].ReadOnly = true;
             dataGridView1.Columns[3].ReadOnly = true;
             dataGridView1.Columns[4].ReadOnly = true;
         }
         public static decimal totalidad;
+        public static decimal iva;
         public static int cont_fila = 0;
         private void colocar_Click(object sender, EventArgs e)
         {
@@ -77,6 +79,7 @@ namespace sistemadia
             }
             else
             {
+                iva = 0;
                 totalidad = 0;
                 bool existe = false;
                 int num_fila = 0;
@@ -118,6 +121,11 @@ namespace sistemadia
                 }
                 foreach (DataGridViewRow fila in dataGridView1.Rows)
                 {
+                    if (int.Parse(fila.Cells[2].Value.ToString())<=0)
+                    {
+                        dataGridView1.Rows.Remove(fila);
+                        continue;
+                    }
                     totalidad += Convert.ToDecimal(fila.Cells[4].Value);
 
 
@@ -131,8 +139,9 @@ namespace sistemadia
           
             productotxt.Focus();
 
-
+            iva = (totalidad * 21) / 100;
             resultadotxt.Text ="$"+ totalidad.ToString("N2");
+            ivatex.Text = "$" + iva.ToString("N2");
             if (dataGridView1.Rows.Count==0)
             {
                 btn_vender.Enabled = false ;
@@ -159,9 +168,9 @@ namespace sistemadia
             {
                 totalidad = totalidad - (Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value));
 
-
+                iva = (totalidad * 21 )/ 100;
                 resultadotxt.Text ="$"+ totalidad.ToString("N2");
-
+                ivatex.Text="$"+ iva.ToString("N2");
 
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
 
@@ -201,7 +210,7 @@ namespace sistemadia
             }
             cmm.Close();
         }
-        public string codigocliente;
+        public string codigocliente; 
         public string completa ="consumidor final";
         private void clientetxt_TextChanged(object sender, EventArgs e)
         {
@@ -253,7 +262,7 @@ namespace sistemadia
                     c.importe = (decimal)this.dataGridView1.Rows[i].Cells[4].Value;
                     c.fecha = fechatxt.Text;
                     c.total = resultadotxt.Text;
-                    fer.dato.Add(c);
+                    fer.datos.Add(c);
                 }
                 fer.ShowDialog();
                 dataGridView1.Rows.Clear();
@@ -270,6 +279,10 @@ namespace sistemadia
         private void btn_vender_Click(object sender, EventArgs e)
         {
             completar();
+            if (string.IsNullOrEmpty(codigocliente) || codigocliente=="0")
+            {
+                codigocliente = "1";
+            }
             venta.Agregarventa(vendedor, codigocliente, fechatxt.Text);
             DataTable ds;
             ds = venta.ventamax();
@@ -291,14 +304,19 @@ namespace sistemadia
                 c.importe = (decimal)this.dataGridView1.Rows[i].Cells[4].Value;
                 c.fecha = fechatxt.Text;
                 c.total = resultadotxt.Text;
-                fer.dato.Add(c);
+                fer.datos.Add(c);
             }
             fer.ShowDialog();
             dataGridView1.Rows.Clear();
             resultadotxt.Text = "";
+            ivatex.Text = "";
             cont_fila = 0;
             totalidad = 0;
             productotxt.Focus();
+
+            button1.Enabled = false;
+            btn_vender.Enabled = false;
+            eliminar.Enabled = false;
         }
 
         
@@ -321,6 +339,7 @@ namespace sistemadia
                 codigoprotxt.Text = string.Empty;
                 preciotxt.Text = string.Empty;
                 productotxt.Focus();
+
             }
 
             
@@ -337,7 +356,7 @@ namespace sistemadia
                     if (com.DialogResult == DialogResult.OK)
                     {
                         clientes1.Text = com.dtView_cliente.Rows[com.dtView_cliente.CurrentRow.Index].Cells[0].Value.ToString();
-                        tipo = com.dtView_cliente.Rows[com.dtView_cliente.CurrentRow.Index].Cells[1].Value.ToString();
+                        tipo = com.dtView_cliente.Rows[com.dtView_cliente.CurrentRow.Index].Cells[4].Value.ToString();
                        
 
 
@@ -349,6 +368,9 @@ namespace sistemadia
         private void button1_Click(object sender, EventArgs e)
         {
             completar();
+            if (string.IsNullOrEmpty(clientes1.Text.ToString())){
+                clientes1.Text = "1";
+            }
             venta.Agregarventa(vendedor, clientes1.Text, fechatxt.Text);
             DataTable ds;
             ds = venta.ventamax();
@@ -358,32 +380,39 @@ namespace sistemadia
 
                 venta.ventapro(factu, Convert.ToString(fila.Cells[0].Value), Convert.ToString(fila.Cells[2].Value));
             }
-            reporte_factura fer = new reporte_factura();
+          reporte_rasonsicial def = new reporte_rasonsicial();
 
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                reportfactu c = new reportfactu();
+                reportefacutrclientes c = new reportefacutrclientes();
                 c.nombre = (string)this.dataGridView1.Rows[i].Cells[1].Value;
                 c.cantidad = (string)this.dataGridView1.Rows[i].Cells[2].Value;
                 c.precio = (string)this.dataGridView1.Rows[i].Cells[3].Value;
                 c.importe = (decimal)this.dataGridView1.Rows[i].Cells[4].Value;
                 c.fecha = fechatxt.Text;
                 c.total = resultadotxt.Text;
-                fer.dato.Add(c);
+                c.iva = ivatex.Text;
+                c.rasonciol = tipo;
+                def.datos.Add(c);
+               
             }
-            fer.ShowDialog();
+            def.ShowDialog();
             dataGridView1.Rows.Clear();
             resultadotxt.Text = "";
             cont_fila = 0;
             totalidad = 0;
             productotxt.Focus();
+            button1.Enabled = false;
+            btn_vender.Enabled = false;
+            eliminar.Enabled = false;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             resultadotxt.Text = "";
+            ivatex.Text = "";
             cont_fila = 0;
             totalidad = 0;
             if (dataGridView1.Rows.Count == 0)
@@ -408,6 +437,11 @@ namespace sistemadia
 
                 columna.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

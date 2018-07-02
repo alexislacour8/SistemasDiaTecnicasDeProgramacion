@@ -36,6 +36,7 @@ namespace sistemadia
             columnaeliminar.ReadOnly = false;
             dtView_Clientes.Columns.AddRange(new DataGridViewColumn[] { columnaeliminar });
             deshabilitarHeader();
+            
         }
 
         private void deshabilitarHeader()
@@ -84,6 +85,7 @@ namespace sistemadia
             Clientes cliente = new Clientes();
             ds=cliente.contar_Clientes();
             label2.Text = ds.Rows[0][0].ToString();
+            dtView_Clientes.Rows.RemoveAt(0);
            
         }
 
@@ -103,6 +105,8 @@ namespace sistemadia
                         ds = cliente.contar_Clientes();
                         label2.Text = ds.Rows[0][0].ToString();
                         descargartextbox();
+
+                        dtView_Clientes.Rows.RemoveAt(0);
                         MessageBox.Show("Cliente creado exitosamente");
                     }
                     else
@@ -124,6 +128,8 @@ namespace sistemadia
                     {
                         descargartextbox();
                         dtView_Clientes.DataSource = conexioncliente.listar_Clientes();
+
+                        dtView_Clientes.Rows.RemoveAt(0);
                         MessageBox.Show("Cliente modificado exitosamente");
                     }
                     else
@@ -197,6 +203,8 @@ namespace sistemadia
             }
             MessageBox.Show("Se han eliminado clientes satisfactoriamente");
             dtView_Clientes.DataSource = conexioncliente.listar_Clientes();
+
+            dtView_Clientes.Rows.RemoveAt(0);
         }
 
         private void OnCelldobleclick(object sender, DataGridViewCellEventArgs e)

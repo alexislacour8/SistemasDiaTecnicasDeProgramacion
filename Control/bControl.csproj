@@ -52,6 +52,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Proveedor.cs" />
+    <Compile Include="reportefacutrclientes.cs" />
     <Compile Include="reportfactu.cs" />
     <Compile Include="sistemadiatomasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

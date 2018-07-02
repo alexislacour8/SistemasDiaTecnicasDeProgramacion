@@ -31,6 +31,7 @@ namespace sistemadia
             DataTable ds;
             Usuario user = frm_menuPrincipal.user;
             ds = user.listarusuarios();
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             GridVw_usuariosregistrados.DataSource = ds;
             txtbox_newuserdni.Focus();
             txtbox_newuserpassword.isPassword = true;
@@ -132,6 +133,8 @@ namespace sistemadia
                 txtbox_newusernombre.Text = GridVw_usuariosregistrados.CurrentRow.Cells[4].Value.ToString();
                txtbox_newuserapellido.Text = GridVw_usuariosregistrados.CurrentRow.Cells[5].Value.ToString();
                 comboBox1.Text = GridVw_usuariosregistrados.CurrentRow.Cells[3].Value.ToString();
+                btn_modificar.Enabled = true;
+                Guardar.Enabled = false;
             }
         }
 
@@ -150,6 +153,16 @@ namespace sistemadia
             catch(Exception error)
             {
                 MessageBox.Show("no se pudo modificar" + error);
+            }
+            finally
+            {
+                btn_modificar.Enabled = false;
+                Guardar.Enabled = true;
+                txtbox_newuserapellido.Text= string.Empty;
+                txtbox_newuserdni.Text = string.Empty;
+                txtbox_newusernombre.Text = string.Empty;
+                txtbox_newuserpassword.Text = string.Empty;
+
             }
         }
 
